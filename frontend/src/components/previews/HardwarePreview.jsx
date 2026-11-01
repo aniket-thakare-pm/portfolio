@@ -8,7 +8,7 @@ export const HardwarePreview = () => (
       <p className="mt-5 max-w-md text-[#44403C]">A beige computer with an arcade screen you can press, turn and play.</p>
     </div>
     <div className="flex justify-center">
-      <div className="scale-[0.75] sm:scale-100"><Mac3D rotateY={-26} product="[Product 1]" testId="preview-mac" /></div>
+      <div className="scale-[0.75] sm:scale-100"><Mac3D rotateY={-26} testId="preview-mac" /></div>
     </div>
   </div>
 );

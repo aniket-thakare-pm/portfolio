@@ -22,6 +22,11 @@ Hero with line reveal + tilting console, sound switch, manifesto (founder leads)
 - Pinned 520vh scroll chapter (components/site/Chapter.jsx): computer turns through 5 stops, 5 role lines rise with blur fade, screen shows [Product 1–5], 01/05 progress bar; settles and shrinks at the end. Phone layout puts lines above/below; reduced-motion shows a still version.
 - Product cards: clipped monitor frames, scan lines, cursor spotlight. /previews Vintage hardware now shows the computer.
 
+## Update (2026-11-01): pacing, pixel art, mini game
+- Back-of-computer spin compressed to ~3.5% of chapter scroll (p 0.37→0.405); all 5 stops show the screen. Chapter now 600vh, lines use STEP 0.144 (0.1→0.82).
+- Each product has an 8x8 `pixel` sprite in content.js shown on screen above the name.
+- "Ship it" mini game (components/mac/ScreenGame.jsx) on the screen during the chapter's final hold (p ≥ 0.85): start with SHP key, any keyboard key, Space or tapping the screen; jump over bugs; high score saved in the browser.
+
 ## Backlog
 - P0: owner picks final world; real content swap.
 - P1: easy product editing without code, video reels per product.

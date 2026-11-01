@@ -1,6 +1,6 @@
 import { motion, useMotionTemplate, useTransform } from "framer-motion";
 
-export const START = 0.1, STEP = 0.16;
+export const START = 0.1, STEP = 0.144;
 
 export const LineText = ({ line }) => (
   <>

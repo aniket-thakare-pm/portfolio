@@ -47,6 +47,7 @@ export const PRODUCTS = [
     tools: ["[LLM]", "React", "FastAPI", "Figma"],
     result: "[Result — users, revenue, time saved or what you learned.]",
     link: "[Product link]",
+    pixel: ["..####..", ".#....#.", "#.#..#.#", "#......#", "#.####.#", ".#....#.", "..####..", ".#.##.#."],
   },
   {
     no: "02",
@@ -60,6 +61,7 @@ export const PRODUCTS = [
     tools: ["React", "[Database]", "Figma"],
     result: "[The result.]",
     link: "[Product link]",
+    pixel: ["########", "#.#.#..#", "########", "#......#", "#.##...#", "#......#", "#.####.#", "########"],
   },
   {
     no: "03",
@@ -73,6 +75,7 @@ export const PRODUCTS = [
     tools: ["[AI model]", "Premiere Pro"],
     result: "[The result.]",
     link: "[Product link]",
+    pixel: ["#.#.#.#.", "########", "#..#...#", "#..##..#", "#..###.#", "#..##..#", "#..#...#", "########"],
   },
   {
     no: "04",
@@ -86,6 +89,7 @@ export const PRODUCTS = [
     tools: ["[No-code / code]", "[AI model]"],
     result: "[The result.]",
     link: "[Product link]",
+    pixel: ["...##...", ".#.##.#.", "..####..", "###..###", "###..###", "..####..", ".#.##.#.", "...##..."],
   },
   {
     no: "05",
@@ -99,6 +103,7 @@ export const PRODUCTS = [
     tools: ["Figma", "After Effects"],
     result: "[The result.]",
     link: "[Product link]",
+    pixel: ["...##...", "...##...", "########", ".######.", "..####..", ".##..##.", ".#....#.", "#......#"],
   },
 ];
 
