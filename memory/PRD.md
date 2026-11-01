@@ -27,6 +27,11 @@ Hero with line reveal + tilting console, sound switch, manifesto (founder leads)
 - Each product has an 8x8 `pixel` sprite in content.js shown on screen above the name.
 - "Ship it" mini game (components/mac/ScreenGame.jsx) on the screen during the chapter's final hold (p ≥ 0.85): start with SHP key, any keyboard key, Space or tapping the screen; jump over bugs; high score saved in the browser.
 
+## Update (2026-11-01): My story, case studies, game sounds
+- "My story" key after the chapter opens a dark 700vh pinned journey (components/story): 7 steps (JOURNEY in content.js) with morphing objects (editing deck, cinema camera, photo camera, monitor, tablet, roadmap board, the Mac), titles rising with blur, 0X/07 counter; Close story key returns. Phones stack title/object/line; reduced motion gets a list.
+- PM case studies shelf (CASE_STUDIES, 3 placeholders) opening a full-height panel with problem, research, decisions, launch, outcome, metrics, next + "Next case study". Products renamed "Things I built".
+- Game sounds: blip (jump), buzz (hit), chime (point), following the sound switch.
+
 ## Backlog
 - P0: owner picks final world; real content swap.
 - P1: easy product editing without code, video reels per product.

@@ -4,6 +4,8 @@ import { Header } from "@/components/site/Header";
 import { Chapter } from "@/components/site/Chapter";
 import { Manifesto } from "@/components/site/Manifesto";
 import { Products } from "@/components/site/Products";
+import { CaseStudies } from "@/components/site/CaseStudies";
+import { Story } from "@/components/story/Story";
 import { Skills } from "@/components/site/Skills";
 import { Marquee } from "@/components/site/Marquee";
 import { Contact } from "@/components/site/Contact";
@@ -11,6 +13,7 @@ import { Contact } from "@/components/site/Contact";
 export default function Home() {
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.1, anchors: true });
+    window.__lenis = lenis;
     let id;
     const raf = (t) => {
       lenis.raf(t);
@@ -20,6 +23,7 @@ export default function Home() {
     return () => {
       cancelAnimationFrame(id);
       lenis.destroy();
+      window.__lenis = null;
     };
   }, []);
 
@@ -28,8 +32,10 @@ export default function Home() {
       <Header />
       <main>
         <Chapter />
+        <Story />
         <Marquee />
         <Manifesto />
+        <CaseStudies />
         <Products />
         <Skills />
         <Contact />

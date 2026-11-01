@@ -8,7 +8,8 @@ export const OWNER = {
 
 export const NAV = [
   { id: "manifesto", label: "Manifesto" },
-  { id: "products", label: "Products" },
+  { id: "cases", label: "Cases" },
+  { id: "products", label: "Built" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
@@ -121,6 +122,34 @@ export const ROLE_LINES = [
   ["Editor who tells the", "story."],
   ["Builder who ships with", "AI."],
 ];
+
+export const JOURNEY = [
+  { no: "01", obj: "edit", title: "Video editing", line: "[What this taught me — e.g. pacing, story and cutting what doesn't serve it.]" },
+  { no: "02", obj: "film", title: "Filmmaking", line: "[What this taught me.]" },
+  { no: "03", obj: "photo", title: "Photography", line: "[What this taught me.]" },
+  { no: "04", obj: "ps", title: "Photoshop", line: "[What this taught me.]" },
+  { no: "05", obj: "ui", title: "UI / UX", line: "[What this taught me.]" },
+  { no: "06", obj: "pm", title: "Product management", line: "[What this taught me.]" },
+  { no: "07", obj: "build", title: "Product building", line: "[What this taught me — and how it closes the loop.]" },
+];
+
+const caseStudy = (no) => ({
+  no,
+  title: `[Case study ${Number(no)}]`,
+  area: "[Product area]",
+  role: "[Your role, e.g. Lead PM]",
+  result: "[+00%]",
+  resultLabel: "[Headline result — placeholder]",
+  problem: "[The user or business problem, and why it mattered now.]",
+  research: "[How you learned — interviews, data, experiments — and the key insight.]",
+  decisions: ["[Decision 1] — [the trade-off you accepted]", "[Decision 2] — [the trade-off]", "[What you chose not to build, and why]"],
+  launched: "[What shipped, to whom, and how it rolled out.]",
+  outcome: "[Metrics and what changed for users or the business — placeholder.]",
+  metrics: [["[Metric 1]", "[+00%]"], ["[Metric 2]", "[00k]"], ["[Metric 3]", "[0.0x]"]],
+  next: "[What you'd do next with more time or data.]",
+});
+
+export const CASE_STUDIES = ["01", "02", "03"].map(caseStudy);
 
 export const MARQUEE_WORDS = ["Shipped", "Designed", "Edited", "Launched", "Prototyped", "Tested", "Iterated", "Shipped again"];
 export const MARQUEE_TOOLS = ["[LLMs]", "React", "FastAPI", "Figma", "Premiere Pro", "After Effects", "Notion", "[Your tools]"];

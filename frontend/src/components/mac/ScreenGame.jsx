@@ -14,7 +14,7 @@ export const ScreenGame = () => {
     let g = fresh();
     const jump = () => {
       if (g.over) { g = fresh(); return; }
-      if (g.y >= GROUND - 4) { g.vy = -3.2; playSound("tick"); }
+      if (g.y >= GROUND - 4) { g.vy = -3.2; playSound("blip"); }
     };
     const onKey = (e) => {
       if (e.code !== "Space" && e.code !== "ArrowUp") return;
@@ -37,10 +37,10 @@ export const ScreenGame = () => {
         }
         g.obs.forEach((o) => {
           o.x -= g.speed;
-          if (!o.passed && o.x + 4 < 10) { o.passed = true; g.score += 1; }
+          if (!o.passed && o.x + 4 < 10) { o.passed = true; g.score += 1; playSound("chime"); }
           if (o.x < 16 && o.x + 4 > 10 && g.y + 4 > GROUND - o.h) {
             g.over = true;
-            playSound("switch");
+            playSound("buzz");
             if (g.score > best) { best = g.score; localStorage.setItem("pm-best", String(best)); }
           }
         });

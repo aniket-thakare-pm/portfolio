@@ -9,12 +9,37 @@ const PRESETS = {
   open: { freq: 520, dur: 0.14, noise: 0.05, gain: 0.16 },
 };
 
+const GAME = {
+  blip: [[440, 880, 0, 0.08, "square", 0.12]],
+  buzz: [[140, 55, 0, 0.32, "sawtooth", 0.16], [146, 60, 0, 0.32, "square", 0.08]],
+  chime: [[660, 660, 0, 0.07, "triangle", 0.14], [990, 990, 0.07, 0.12, "triangle", 0.14]],
+};
+
+const tone = (from, to, delay, dur, wave, gain) => {
+  const t = ctx.currentTime + delay;
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(gain, t);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  g.connect(ctx.destination);
+  const o = ctx.createOscillator();
+  o.type = wave;
+  o.frequency.setValueAtTime(from, t);
+  o.frequency.exponentialRampToValueAtTime(to, t + dur);
+  o.connect(g);
+  o.start(t);
+  o.stop(t + dur);
+};
+
 let ctx;
 export const playSound = (type = "click") => {
   if (typeof window === "undefined" || localStorage.getItem(KEY) !== "on") return;
   const Ctx = window.AudioContext || window.webkitAudioContext;
   if (!Ctx) return;
   ctx = ctx || new Ctx();
+  if (GAME[type]) {
+    GAME[type].forEach((n) => tone(...n));
+    return;
+  }
   const p = PRESETS[type] || PRESETS.click;
   const t = ctx.currentTime;
   const out = ctx.createGain();

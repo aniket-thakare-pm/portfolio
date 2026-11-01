@@ -102,6 +102,9 @@
 .pixel-art { filter: drop-shadow(0 0 3px rgba(74,222,128,.9)); }
 .pixel-canvas { image-rendering: pixelated; filter: drop-shadow(0 0 3px rgba(74,222,128,.85)); }
 
+.story-spot { background: radial-gradient(ellipse 55% 45% at 50% 52%, rgba(255,236,200,.16), transparent 70%); }
+.story-spot-right { background: radial-gradient(ellipse 40% 50% at 64% 52%, rgba(255,236,200,.16), transparent 70%); }
+
 .clip-frame, .clip-screen { clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px); }
 .clip-screen { border-radius: 16px; }
 .spot { background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.45), transparent 60%); opacity: 0; transition: opacity .3s ease; mix-blend-mode: soft-light; }

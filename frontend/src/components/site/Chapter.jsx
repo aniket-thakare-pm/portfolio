@@ -1,20 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { PRODUCTS, ROLE_LINES } from "@/data/content";
 import { Mac3D } from "@/components/mac/Mac3D";
 import { HeroIntro } from "./HeroIntro";
 import { ChapterLine, LineText, START, STEP } from "./ChapterLine";
 
-const useIsMobile = () => {
-  const [m, setM] = useState(() => window.matchMedia("(max-width: 767px)").matches);
-  useEffect(() => {
-    const q = window.matchMedia("(max-width: 767px)");
-    const on = () => setM(q.matches);
-    q.addEventListener("change", on);
-    return () => q.removeEventListener("change", on);
-  }, []);
-  return m;
-};
+import { useIsMobile } from "@/lib/useIsMobile";
 
 const MacScale = ({ children }) => <div className="scale-[0.62] sm:scale-90 lg:scale-[1.05] xl:scale-[1.15]">{children}</div>;
 

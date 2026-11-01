@@ -43,7 +43,7 @@ export const Products = () => {
   return (
     <section id="products" className="bg-[#EAE5D9] px-5 py-24 sm:px-8 lg:py-32" data-testid="products-section">
       <div className="mx-auto max-w-7xl">
-        <SectionLabel code="SEC_02 / PRODUCTS" title={<>Things I've<br />shipped.</>}
+        <SectionLabel code="SEC_03 / THINGS I BUILT" title={<>Things I<br />built.</>}
           kicker="Each one is a short story: the problem, what I built, the tools, and what happened. Tap to open." />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((p, i) => (

@@ -39,7 +39,7 @@ const Visual = ({ id }) => {
 export const Skills = () => (
   <section id="skills" className="px-5 py-24 sm:px-8 lg:py-32" data-testid="skills-section">
     <div className="mx-auto max-w-7xl">
-      <SectionLabel code="SEC_03 / SKILLS" title={<>Four crafts,<br />one workbench.</>} kicker="From the first question to the launch film." />
+      <SectionLabel code="SEC_04 / SKILLS" title={<>Four crafts,<br />one workbench.</>} kicker="From the first question to the launch film." />
       <div className="grid auto-rows-[minmax(240px,auto)] gap-5 md:grid-cols-2 lg:grid-cols-4">
         {SKILLS.map((s, i) => (
           <Reveal key={s.id} delay={i * 0.06} className={s.span}>

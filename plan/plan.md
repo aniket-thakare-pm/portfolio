@@ -1,52 +1,58 @@
-# Portfolio Update: "The Product Machine", now with the Macintosh
+# Portfolio Update: "My Story" journey, two project shelves, and game sounds
 
-The hero console is replaced by a beige Macintosh-style computer with a glowing arcade-style screen.
-As visitors scroll, the computer stays centred and turns in 3D, the screen shows each product name in turn, and lines of text rise around it. After that the page scrolls normally.
+This update adds a hidden "My story" section that opens when clicked. It shows the owner's path from video editing to building products, and the object on screen turns into a different tool for each step.
+The projects are split into two shelves: PM case studies, which open into full stories, and the products the owner built. The "Ship it" game also gets retro sounds.
 
 ## Who it's for
-- Founders, investors and collaborators deciding whether to work with the owner.
-- Hiring managers looking for a product manager who also designs, edits video and builds.
+- Hiring managers and founders who want proof of product management skill, through the PM case studies.
+- Collaborators and investors who want to see what the owner has built and how a storyteller became a builder.
 
 ## Core features and experience
-- **Macintosh-style computer as the main object.** It is a true 3D model, not a flat picture: a beige all-in-one body with soft rounded edges, a recessed screen, a floppy-disk slot, vents, a small badge with the owner's initials, and a matching mini keyboard in front.
-  - **Arcade screen.** Deep green glass with glowing pixel type, scan lines, a slight curve and a flicker. The text glow comes from the Arcade preview.
-  - **Things you can still touch.** The tactile parts you liked stay, now built into the computer: a brightness dial that turns when clicked, a power switch, and keyboard keys that press down with a click. Clicking the keys also changes the screen.
-- **Opening moment.** The headline reveals line by line, then the computer powers on with a short boot flicker. The screen shows "HELLO" and then the first product name.
-- **The scroll chapter, the centrepiece.**
-  - When the visitor starts scrolling, the computer stays pinned in the centre of the screen. It turns smoothly in 3D as they scroll: first a three-quarter view, then its side profile, then a nearly full spin, and finally back to the front.
-  - At each turning stop, one large text line rises from below and fades past the computer: "Founder who ships fast." → "Product manager worth hiring." → "Designer with taste." → "Editor who tells the story." → "Builder who ships with AI."
-  - Each time the computer turns, its screen switches to the next product name ([Product 1] … [Product 5]) with a quick channel-change glitch.
-  - A small progress bar in the corner shows how far through the chapter the visitor is, labelled "01/05" in pixel type.
-  - When the chapter ends, the computer settles, shrinks slightly and moves up. The manifesto, products, skills and contact sections then scroll normally.
-- **Products section (kept, refined).** The cards keep their dotted grid backgrounds. Clipped screen frames are added so each card looks like a cartridge or monitor, with a soft spotlight that follows the cursor. Clicking a card still opens the short story.
-- **Rest of the site kept.** The marquee, manifesto, skills grid, sound switch (off by default) and the closing "Book a call" and "Email me" buttons all stay. The old standalone console is removed everywhere, including from the Vintage hardware preview on /previews, which will now show the computer.
-- **Phones.** The scroll chapter works on phones too. The computer is smaller and the text lines sit above and below it, not around it. If 3D is slow or the visitor has turned off motion, a still front view of the computer is shown and all text stays readable.
+- **"My story" button.** It sits right after the computer scroll chapter. It is a large, pressable retro key labelled "My story — how I got here" with an arrow. The section stays closed until it is clicked. Clicking it makes a crisp click and smoothly opens the section. A "Close story" key at the end folds it back up.
+- **Dark theme inside the story.** The section switches to a darker world: near-black graphite, warm off-white text, the orange accent, and a soft studio spotlight on the object. When the story ends, the page fades back to the usual beige and the projects continue.
+- **Journey as a pinned scroll.** While visitors scroll inside the story, one object stays centred and changes into the tool of each step. Steps are numbered 01–07, with no years:
+  1. Video editing: an editing deck with a timeline strip.
+  2. Filmmaking: a cinema camera with a film reel.
+  3. Photography: a classic photo camera with a lens that focuses as you scroll.
+  4. Photoshop: a monitor showing layers and a brush.
+  5. UI/UX: a design tablet with a wireframe.
+  6. Product management: a board with sticky notes moving across a roadmap.
+  7. Product building: the beige computer from the hero, closing the loop.
+  - Each step has a large title and one short line about what that step taught. The text is placeholder until real wording is given. The title rises from below with a soft blur fade.
+  - The change between objects is a smooth morph: shrink, turn, blur, then settle into the next tool. It does not hard-cut.
+  - A pixel-type step counter ("03/07") and a thin progress line sit in the corner.
+- **Two project shelves.**
+  - **PM case studies (new).** 3 placeholder case studies. Each card shows the product area, the owner's role and one headline result. Clicking a card opens a full-height story panel that covers most of the screen. The panel has clear sections: the problem, research, key decisions and trade-offs, what launched, and the metrics or outcome. It also has a short "what I'd do next" note and a "Next case study" button.
+  - **Things I built (existing).** The current product cards with monitor frames and cursor spotlight stay as they are. They still open the short story with "Try it".
+- **Game sound pack.** When the sound switch is on, the "Ship it" game plays a retro jump blip, a crash buzz when a bug is hit, and a short rising chime for each point. It is silent when the switch is off.
+- **Everything else stays:** hero chapter, marquee, manifesto, skills grid, contact keys, and /previews.
 
 ## User flow
-1. Visitor lands. The headline reveals and the computer boots up with "HELLO".
-2. They scroll. The computer stays put and turns, the role lines rise one by one, and the screen flips through the product names.
-3. The chapter ends, the computer moves aside, and normal scrolling continues: manifesto → products → skills → contact.
-4. They open a product story, then book a call or send an email.
+1. Visitor scrolls the computer chapter, with its roles, product names and the game.
+2. They see the "My story" key. If they press it, the dark section opens. They scroll through the seven steps as the object transforms, then return to the beige site.
+3. They browse PM case studies and open one full story. Then they browse "Things I built".
+4. They finish with skills and contact: Book a call or Email me.
 
 ## UI/UX feel
-Warm beige and cream hardware with one sharp orange accent and that phosphor-green screen glow. Heavy, satisfying motion: the computer turns smoothly with the scroll and never jumps, and the text rises with a soft blur fade. Clicks are crisp and mechanical. It should feel like a physical object on a desk being slowly turned under studio light, with a soft floor shadow and a gentle highlight sliding across the casing as it turns.
+The main site keeps its warm beige hardware look. The story is the cinematic contrast: dark, spotlit and slower, like a product film. The objects are crafted from the same beige-and-orange material, so they feel like one family of hardware. Motion stays heavy and smooth, and clicks stay crisp and mechanical.
 
 ## Implementation phases
 - **Phase 1 (built now):**
-  - The 3D Macintosh with the arcade screen, boot moment, dial, switch and keys.
-  - The pinned scroll chapter with turning, rising role lines, product names on screen and the progress bar.
-  - The phone and reduced-motion versions.
-  - The old console removed.
-  - Product cards refined with clipped frames and the cursor spotlight.
-  - The Vintage hardware preview updated to show the computer.
-- **Phase 2:** the owner's real name, email, calendar link, photo and product stories with screenshots. The screen could show a tiny pixel version of each product.
-- **Phase 3:** easter eggs, such as typing a secret word on the keyboard or a mini arcade game on the screen. Also visitor analytics and search/social-share setup.
+  - The "My story" button that opens and closes the dark section.
+  - The seven-step pinned journey with transforming objects, step titles and the counter.
+  - The phone version: the object is smaller, with the text above and below it. Visitors who turn off motion get a simple stacked list.
+  - The PM case studies shelf with 3 placeholder full stories.
+  - The renamed "Things I built" shelf.
+  - Game sounds.
+- **Phase 2:** the owner's real story text, case studies, product details, name, email and calendar link. Optional real photos or short clips per journey step, such as a frame from an early edit or a photograph taken.
+- **Phase 3:** easter eggs in each journey object (for example, click the camera to take a "photo"), downloadable resume, visitor analytics and search/social-share setup.
 
 ## Assumptions
-- The role lines are the five above. They can be edited along with the rest of the content.
-- The screen shows the five placeholder product names, [Product 1] to [Product 5], until real names are provided.
-- The scroll chapter lasts about four screen-heights of scrolling, about one stop per product.
-- The computer spins around its upright axis with a slight tilt. It is not flipped upside down.
-- The computer's badge shows the "YN" initials mark, not Apple's logo or name, to avoid copying a real brand.
-- Arcade text glow is used only on the computer screen. The rest of the site keeps its current type.
-- The other three previews on /previews (desktop, catalogue, arcade) stay as they are for reference.
+- The story button sits directly after the computer scroll chapter, before the manifesto, and the story is closed when a visitor first arrives.
+- The five role lines in the computer chapter stay as they are.
+- The journey is about seven screen-heights of scrolling, one per step, inside the opened section.
+- Step titles and lines are placeholders, e.g. "01 — Video editing: [What this taught me]".
+- There are 3 PM case studies, all placeholders such as [Case study 1], with placeholder metrics clearly marked.
+- The objects are original illustrations of generic tools, with no real brand logos (no Adobe, Canon and so on). "Photoshop" appears only as a text label.
+- Game sounds follow the existing sound switch, which is off by default.
+- Publishing is done with the platform's Deploy button once the owner is happy. It is not part of this plan.
