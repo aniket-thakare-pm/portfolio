@@ -70,4 +70,38 @@
 .w95-btn { background: #C0C0C0; border: 2px solid; border-color: #fff #404040 #404040 #fff; }
 .w95-btn:active { border-color: #404040 #fff #fff #404040; }
 
-@media (prefers-reduced-motion: reduce) { .marquee-track, .blink { animation: none; } }
+.font-arcade { font-family: "Press Start 2P", monospace; }
+
+.mac-face {
+  position: absolute; left: 50%; top: 50%; backface-visibility: hidden; border-radius: 18px;
+  background:
+    linear-gradient(105deg, transparent calc(var(--hl, 40) * 1% - 25%), rgba(255,255,255,.5) calc(var(--hl, 40) * 1%), transparent calc(var(--hl, 40) * 1% + 25%)),
+    linear-gradient(180deg, #F3EDE0 0%, #DDD4C1 100%);
+  border: 1px solid #CDC3AE;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.75), inset 0 -8px 16px rgba(120,100,60,.18);
+}
+.mac-side { background:
+    linear-gradient(105deg, transparent calc(var(--hl, 40) * 1% - 25%), rgba(255,255,255,.35) calc(var(--hl, 40) * 1%), transparent calc(var(--hl, 40) * 1% + 25%)),
+    linear-gradient(180deg, #E4DBC8 0%, #CABFA8 100%); }
+.mac-top { background: linear-gradient(180deg, #F8F3E8, #E8E0CE); }
+.mac-bottom { background: #B5AA92; }
+.mac-bezel { background: linear-gradient(180deg, #D3CAB5, #E9E1D0); box-shadow: inset 0 3px 8px rgba(80,60,30,.4), inset 0 -1px 0 #fff; }
+.mac-screen { background: radial-gradient(ellipse at center, #0a3a22 0%, #03140b 70%, #010805 100%); border-radius: 14px / 20px; box-shadow: inset 0 0 30px rgba(0,0,0,.9), inset 0 0 0 2px #1d1a14; }
+.mac-glow { text-shadow: 0 0 8px rgba(74,222,128,.85), 0 0 22px rgba(74,222,128,.4); }
+.mac-glass { border-radius: inherit; background: radial-gradient(ellipse at 28% 12%, rgba(255,255,255,.16), transparent 45%), radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.5)); }
+.mac-vents { background: repeating-linear-gradient(180deg, rgba(90,70,40,.35) 0 2px, transparent 2px 8px); border-radius: 6px; }
+.mac-kbd { background: linear-gradient(180deg, #EFE8DA, #D8CEB8); border: 1px solid #C6BBA3; border-radius: 14px; box-shadow: 0 10px 0 #B2A78E, 0 24px 30px -10px rgba(60,45,20,.35); }
+.floor-shadow { background: radial-gradient(ellipse at center, rgba(60,45,20,.38), transparent 70%); filter: blur(6px); }
+@keyframes flicker { 0%, 91%, 100% { opacity: 1; } 92% { opacity: .78; } 93% { opacity: 1; } 96% { opacity: .9; } }
+.mac-flicker { animation: flicker 3.4s infinite; }
+@keyframes glitch { 0% { transform: translateX(-8px) skewX(14deg); opacity: .25; filter: blur(1px); } 35% { transform: translateX(5px); opacity: 1; } 65% { transform: translateX(-2px); } 100% { transform: none; } }
+.mac-glitch { display: inline-block; animation: glitch .38s steps(4); }
+@keyframes boot { 0% { background: #03140b; } 20% { background: #c9ffe0; } 35% { background: #03140b; } 55% { background: #6bf5a0; } 100% { background: #03140b; } }
+.mac-boot { animation: boot .6s steps(6) forwards; }
+
+.clip-frame, .clip-screen { clip-path: polygon(18px 0, calc(100% - 18px) 0, 100% 18px, 100% calc(100% - 18px), calc(100% - 18px) 100%, 18px 100%, 0 calc(100% - 18px), 0 18px); }
+.clip-screen { border-radius: 16px; }
+.spot { background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.45), transparent 60%); opacity: 0; transition: opacity .3s ease; mix-blend-mode: soft-light; }
+.group:hover .spot { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) { .marquee-track, .blink, .mac-flicker, .mac-glitch { animation: none; } }

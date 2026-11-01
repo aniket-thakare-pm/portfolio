@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 import { Header } from "@/components/site/Header";
-import { Hero } from "@/components/site/Hero";
+import { Chapter } from "@/components/site/Chapter";
 import { Manifesto } from "@/components/site/Manifesto";
 import { Products } from "@/components/site/Products";
 import { Skills } from "@/components/site/Skills";
@@ -24,10 +24,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grain min-h-screen bg-[#F4F1EA] text-[#1C1917] overflow-x-hidden" data-testid="home-page">
+    <div className="grain min-h-screen bg-[#F4F1EA] text-[#1C1917] overflow-x-clip" data-testid="home-page">
       <Header />
       <main>
-        <Hero />
+        <Chapter />
         <Marquee />
         <Manifesto />
         <Products />

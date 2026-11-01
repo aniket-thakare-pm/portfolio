@@ -109,5 +109,13 @@ export const SKILLS = [
   { id: "build", title: "Building", sub: "AI · Web code · Shipping", span: "lg:col-span-1" },
 ];
 
+export const ROLE_LINES = [
+  ["Founder who ships", "fast."],
+  ["Product manager worth", "hiring."],
+  ["Designer with", "taste."],
+  ["Editor who tells the", "story."],
+  ["Builder who ships with", "AI."],
+];
+
 export const MARQUEE_WORDS = ["Shipped", "Designed", "Edited", "Launched", "Prototyped", "Tested", "Iterated", "Shipped again"];
 export const MARQUEE_TOOLS = ["[LLMs]", "React", "FastAPI", "Figma", "Premiere Pro", "After Effects", "Notion", "[Your tools]"];

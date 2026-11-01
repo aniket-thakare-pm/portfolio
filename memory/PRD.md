@@ -17,6 +17,11 @@ Hero with line reveal + tilting console, sound switch, manifesto (founder leads)
 - All Phase 1 items above; 4 previews (hardware, Win95 desktop with draggable windows, 1970s catalogue, arcade TV with channels).
 - Placeholders: [Your Name], YN initials, [your@email.com], [Calendar link], [City, Country], [Product 1–5] with problem/built/tools/result/link.
 
+## Update (2026-11-01): Macintosh scroll chapter
+- Old console replaced by a CSS-3D beige computer (components/mac): arcade green screen with boot flicker → HELLO → product names, brightness dial, power switch, 6 clickable keyboard keys.
+- Pinned 520vh scroll chapter (components/site/Chapter.jsx): computer turns through 5 stops, 5 role lines rise with blur fade, screen shows [Product 1–5], 01/05 progress bar; settles and shrinks at the end. Phone layout puts lines above/below; reduced-motion shows a still version.
+- Product cards: clipped monitor frames, scan lines, cursor spotlight. /previews Vintage hardware now shows the computer.
+
 ## Backlog
 - P0: owner picks final world; real content swap.
 - P1: easy product editing without code, video reels per product.

@@ -1,50 +1,52 @@
-# Personal Portfolio — "The Product Machine"
+# Portfolio Update: "The Product Machine", now with the Macintosh
 
-A one-page portfolio for a product manager, designer, video editor and product builder who ships AI-built products.
-It presents the owner as a fast-shipping founder with taste, and the site itself is a crafted, tactile retro object people want to click.
+The hero console is replaced by a beige Macintosh-style computer with a glowing arcade-style screen.
+As visitors scroll, the computer stays centred and turns in 3D, the screen shows each product name in turn, and lines of text rise around it. After that the page scrolls normally.
 
 ## Who it's for
-- Founders, investors and collaborators deciding whether to partner with the owner.
-- Hiring managers and recruiters looking for a product manager who can also design and build.
-- Anyone the owner shares the link with, who should leave thinking: "this person picks the right problems and ships them well."
+- Founders, investors and collaborators deciding whether to work with the owner.
+- Hiring managers looking for a product manager who also designs, edits video and builds.
 
 ## Core features and experience
-- **Style preview first.** Before the full site is built, four clickable one-screen hero previews are made, one per retro world, so the owner can choose by seeing rather than reading:
-  1. Vintage hardware — beige casing, chunky keys, knobs, toggle switches, glowing number displays (like a Braun radio or a synthesizer). Real-world reference: teenage.engineering
-  2. Old computer desktop — windows you open and drag, folder icons, start menu (like Windows 95 / early Macintosh). Reference: poolsuite.net, yuteoctober.github.io/wins95Portfolio
-  3. 1970s printed catalogue — paper texture, big serif headlines, each product listed with an order number.
-  4. Arcade / old TV — glowing screen, scan lines, pixel type, a "channel" or "level" per product. Reference: kaisermann.me
-  The chosen world is then pushed further than plain "beige retro": modern layout, premium motion and real craft, so it feels new rather than nostalgic-only.
-- **Hero with a signature moment.** Large headline revealed line by line on load, a subtle 3D tilt/parallax on the main retro object, and a sound switch (off by default).
-- **Three-part positioning.** Founder who ships fast · Product manager worth hiring · Taste for the right problems. Shown as a short manifesto section.
-- **Products as short stories.** Each product card opens into: the problem, what was built, tools used (AI, code, design, video), the result, and a link to try it.
-- **Skills bento.** Product, design, video editing and building shown as an aligned grid of tiles in the chosen style.
-- **Slow editorial marquee** of tools and words (e.g. "shipped", "designed", "edited", "launched").
-- **Clicky sounds.** Every button, key and switch has a matching retro click once the visitor turns sound on. Choice is remembered.
-- **Closing call to action.** Two buttons: "Book a call" (opens the owner's calendar link) and "Email me" (opens the visitor's email app).
-- **Original logo mark** built from the owner's initials in the chosen style, also used as the browser tab icon.
-- Works fully on phones; every section readable even if animations don't run.
+- **Macintosh-style computer as the main object.** It is a true 3D model, not a flat picture: a beige all-in-one body with soft rounded edges, a recessed screen, a floppy-disk slot, vents, a small badge with the owner's initials, and a matching mini keyboard in front.
+  - **Arcade screen.** Deep green glass with glowing pixel type, scan lines, a slight curve and a flicker. The text glow comes from the Arcade preview.
+  - **Things you can still touch.** The tactile parts you liked stay, now built into the computer: a brightness dial that turns when clicked, a power switch, and keyboard keys that press down with a click. Clicking the keys also changes the screen.
+- **Opening moment.** The headline reveals line by line, then the computer powers on with a short boot flicker. The screen shows "HELLO" and then the first product name.
+- **The scroll chapter, the centrepiece.**
+  - When the visitor starts scrolling, the computer stays pinned in the centre of the screen. It turns smoothly in 3D as they scroll: first a three-quarter view, then its side profile, then a nearly full spin, and finally back to the front.
+  - At each turning stop, one large text line rises from below and fades past the computer: "Founder who ships fast." → "Product manager worth hiring." → "Designer with taste." → "Editor who tells the story." → "Builder who ships with AI."
+  - Each time the computer turns, its screen switches to the next product name ([Product 1] … [Product 5]) with a quick channel-change glitch.
+  - A small progress bar in the corner shows how far through the chapter the visitor is, labelled "01/05" in pixel type.
+  - When the chapter ends, the computer settles, shrinks slightly and moves up. The manifesto, products, skills and contact sections then scroll normally.
+- **Products section (kept, refined).** The cards keep their dotted grid backgrounds. Clipped screen frames are added so each card looks like a cartridge or monitor, with a soft spotlight that follows the cursor. Clicking a card still opens the short story.
+- **Rest of the site kept.** The marquee, manifesto, skills grid, sound switch (off by default) and the closing "Book a call" and "Email me" buttons all stay. The old standalone console is removed everywhere, including from the Vintage hardware preview on /previews, which will now show the computer.
+- **Phones.** The scroll chapter works on phones too. The computer is smaller and the text lines sit above and below it, not around it. If 3D is slow or the visitor has turned off motion, a still front view of the computer is shown and all text stays readable.
 
 ## User flow
-1. Visitor lands, sees the hero object assemble and the headline reveal.
-2. Optionally flips the sound switch on.
-3. Scrolls through manifesto, products, skills and marquee.
-4. Opens one or two product stories and tries a product.
-5. Ends at the closing section and books a call or sends an email.
+1. Visitor lands. The headline reveals and the computer boots up with "HELLO".
+2. They scroll. The computer stays put and turns, the role lines rise one by one, and the screen flips through the product names.
+3. The chapter ends, the computer moves aside, and normal scrolling continues: manifesto → products → skills → contact.
+4. They open a product story, then book a call or send an email.
 
 ## UI/UX feel
-Tactile, warm and confident. Beige, cream and muted tones from the chosen era, with one sharp accent colour. Buttons feel pressable (depth, press-down animation, click). Smooth momentum scrolling, sections that reveal as you scroll, generous spacing, and distinctive type that matches the era — premium "award site" craft rather than a template.
+Warm beige and cream hardware with one sharp orange accent and that phosphor-green screen glow. Heavy, satisfying motion: the computer turns smoothly with the scroll and never jumps, and the text rises with a soft blur fade. Clicks are crisp and mechanical. It should feel like a physical object on a desk being slowly turned under studio light, with a soft floor shadow and a gentle highlight sliding across the casing as it turns.
 
 ## Implementation phases
-- **Phase 1 (MVP, built now):** four clickable style previews to choose from; then the full one-page site in the chosen style — hero, manifesto, product stories, skills bento, marquee, sound toggle, logo/favicon, Book a call + Email buttons, phone layout.
-- **Phase 2:** owner's real content swapped in (name, photo, products, screenshots, links), a simple way to edit products without touching code, and short video reels per product.
-- **Phase 3:** extra easter eggs in the chosen world (hidden keys, mini-game or boot sequence), visitor analytics, and search/social-share setup.
+- **Phase 1 (built now):**
+  - The 3D Macintosh with the arcade screen, boot moment, dial, switch and keys.
+  - The pinned scroll chapter with turning, rising role lines, product names on screen and the progress bar.
+  - The phone and reduced-motion versions.
+  - The old console removed.
+  - Product cards refined with clipped frames and the cursor spotlight.
+  - The Vintage hardware preview updated to show the computer.
+- **Phase 2:** the owner's real name, email, calendar link, photo and product stories with screenshots. The screen could show a tiny pixel version of each product.
+- **Phase 3:** easter eggs, such as typing a secret word on the keyboard or a mini arcade game on the screen. Also visitor analytics and search/social-share setup.
 
 ## Assumptions
-- The site is a single scrolling page.
-- Name, calendar link, email, photo and product details are not available yet; clearly marked placeholders (e.g. [Your Name], [Calendar link], [Product 1]) are used and listed for replacement.
-- 4–6 sample product stories are shown as placeholders.
-- Sound is off until the visitor switches it on.
-- No contact form or login; contact is via calendar link and email only.
-- The three-part positioning (founder, hireable PM, taste) is the core message, with "founder who ships fast" leading.
-- Final choice of retro world is made by the owner from the visual previews in Phase 1.
+- The role lines are the five above. They can be edited along with the rest of the content.
+- The screen shows the five placeholder product names, [Product 1] to [Product 5], until real names are provided.
+- The scroll chapter lasts about four screen-heights of scrolling, about one stop per product.
+- The computer spins around its upright axis with a slight tilt. It is not flipped upside down.
+- The computer's badge shows the "YN" initials mark, not Apple's logo or name, to avoid copying a real brand.
+- Arcade text glow is used only on the computer screen. The rest of the site keeps its current type.
+- The other three previews on /previews (desktop, catalogue, arcade) stay as they are for reference.
