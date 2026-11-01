@@ -1,0 +1,237 @@
+{
+  "project_title": "Extraordinary Multidisciplinary Portfolio & Hardware Experience",
+  "app_type": "portfolio",
+  "context": "Tactile Retro-Hardware x High-Performance Modern Product Builder Portfolio",
+  "archetype": "ORGANIC_RETRO_HARDWARE_SWISS",
+  "target_roles": [
+    "Product Manager",
+    "Product Designer",
+    "Video Editor",
+    "AI Product Builder & Entrepreneur"
+  ],
+  "typography": {
+    "font_family_heading": "Space Grotesk, Syne, Instrument Serif, monospace",
+    "font_family_body": "Inter, JetBrains Mono, Space Mono, sans-serif",
+    "font_family_display_retro": "'VT323', 'Courier Prime', 'Share Tech Mono', monospace",
+    "heading_h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase",
+    "heading_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+    "heading_h3": "text-xl sm:text-2xl font-semibold",
+    "body_text": "text-sm sm:text-base leading-relaxed text-stone-700 dark:text-stone-300",
+    "label_uppercase": "text-xs font-mono uppercase tracking-[0.25em] text-stone-500",
+    "rules": [
+      "Use mono uppercase labels for all industrial parameter controls, section numbers (e.g., [SEC_01]), and hardware badges.",
+      "Never exceed text-6xl for hero titles.",
+      "Header text must contrast at least 4.5:1 against beige bone or dark graphite backgrounds."
+    ]
+  },
+  "colors": {
+    "theme_mode": "Light Warm Bone default with Dark Graphite & Previews visual mode switching",
+    "palette": {
+      "bone_bg": "#F4F1EA",
+      "bone_surface": "#EAE5D9",
+      "bone_card": "#FDFBF7",
+      "chassis_border": "#D5CFBF",
+      "chassis_border_dark": "#2B2824",
+      "graphite_bg": "#121110",
+      "graphite_surface": "#1C1A18",
+      "graphite_card": "#24211E",
+      "brand_orange": "#FF5A00",
+      "brand_amber": "#D97706",
+      "signal_green": "#10B981",
+      "vfd_cyan": "#06B6D4",
+      "crt_green": "#22C55E",
+      "charcoal_text": "#1C1917",
+      "muted_text": "#78716C",
+      "catalogue_paper": "#F7F4EB"
+    },
+    "gradients": {
+      "hardware_bevel": "linear-gradient(180deg, #FBF9F4 0%, #E6E0D2 100%)",
+      "hardware_bevel_dark": "linear-gradient(180deg, #2A2724 0%, #151413 100%)",
+      "knob_dial": "conic-gradient(from 180deg at 50% 50%, #E2DCCF 0deg, #FAF7F0 120deg, #C5BDAE 240deg, #E2DCCF 360deg)",
+      "vfd_screen": "linear-gradient(180deg, #041E1A 0%, #010F0D 100%)"
+    },
+    "rules": [
+      "No direct flat pure black #000000 for text or backgrounds; use tinted warm charcoal #1C1917 or dark graphite #121110.",
+      "CTA primary actions use signature Teenage-Engineering Industrial Orange #FF5A00.",
+      "Keep transparent overlays non-zero blur and min 70% opacity background."
+    ]
+  },
+  "visual_enhancers": {
+    "tactile_shadows": "shadow-[0_2px_0_0_#C2BBAB,0_4px_12px_rgba(0,0,0,0.06)] dark:shadow-[0_2px_0_0_#2B2824,0_4px_12px_rgba(0,0,0,0.4)]",
+    "button_press": "active:translate-y-[2px] active:shadow-none transition-all duration-75",
+    "beveled_border": "border border-[#D8D2C2] dark:border-[#2D2A26] rounded-2xl",
+    "screen_scanline": "bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]",
+    "led_indicator": "w-2.5 h-2.5 rounded-full bg-[#FF5A00] animate-pulse shadow-[0_0_8px_#FF5A00]",
+    "corner_screws": "Four subtle metallic or engraved screw marks on hero chassis corners for physical authenticity"
+  },
+  "audio_system": {
+    "web_audio_clicks": "Synthesized audio feedback using Web Audio API (AudioContext) for zero external latency.",
+    "sound_states": "Master Sound Toggle (Off by default as required). When ON, plays mechanical key click, rotary dial tick, rocker switch toggle, or drawer slide sounds on interactions.",
+    "toggle_component": "Header audio toggle styled like a physical toggle switch with green/orange LED state."
+  },
+  "key_features_and_routes": {
+    "main_portfolio": {
+      "route": "/",
+      "sections": [
+        {
+          "id": "header",
+          "name": "Hardware Header Bar",
+          "components": [
+            "Initials Logo Mark [PM/SE/01]",
+            "Status Indicator LED (Online / Open to roles & advisory)",
+            "Nav items: Manifest, Products, Skills, Previews",
+            "Audio Synthesizer Sound Switch Toggle (OFF/ON)",
+            "Theme Mode Selector Switch (Bone / Graphite)"
+          ]
+        },
+        {
+          "id": "hero",
+          "name": "3D Interactive Hardware Chassis Hero",
+          "components": [
+            "Line-by-line headline reveal effect: 'PRODUCT MANAGER, DESIGNER & AI PRODUCT BUILDER'",
+            "Interactive 3D/Tilt Physical Synth-Console Object with draggable/rotatable knobs, clicky keys, and glowing VFD screen display",
+            "VFD LCD Screen displaying live parameters: [AI_MODELS_SHIPPED: 14], [SPEED: 10X], [TASTE: UNCOMPROMISED]",
+            "Quick Action CTA: 'Explore Products' & 'Book a Call'"
+          ]
+        },
+        {
+          "id": "manifesto",
+          "name": "Three-Part Positioning Manifesto",
+          "structure": "3 Column Bento Hardware Chassis Deck",
+          "cards": [
+            {
+              "num": "01",
+              "title": "Founder Who Ships Fast",
+              "tagline": "AI-native execution",
+              "content": "Building full-stack AI products from 0 to 1 in days, not quarters. Combining rapid prototyping with solid architecture."
+            },
+            {
+              "num": "02",
+              "title": "PM Worth Hiring",
+              "tagline": "Rigorous Product Strategy",
+              "content": "Decisive product discovery, metric-driven roadmap prioritize, cross-functional alignment, and obsessed with user retention."
+            },
+            {
+              "num": "03",
+              "title": "Taste for the Right Problems",
+              "tagline": "Craft & Design Integrity",
+              "content": "Extraordinary visual aesthetics, intuitive micro-interactions, and motion design that makes software feel like fine hardware."
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "name": "Product Building & Case Studies Showcase",
+          "structure": "Interactive Product Story Bento Grid (4-6 Products)",
+          "cards_features": [
+            "Product status pill (Live, Acquired, Open Source, Scaling)",
+            "Tactile 'Inspect Chassis' button opening full Case Study Modal/Dialog",
+            "Modal contains: Problem statement, What I Built, Tech & AI Tools stack, Metrics/Result, Live Demo Link & Github",
+            "Tags for AI, Web Coding, Product Design, Video Production"
+          ]
+        },
+        {
+          "id": "skills_bento",
+          "name": "4-Pillar Capability Matrix (Skills Bento)",
+          "pillars": [
+            "1. Product Management (PRDs, Growth, Retention, Roadmap, User Discovery)",
+            "2. Product Design (Figma, System Design, Micro-animations, Design Tokens)",
+            "3. Video Editing & Storytelling (Premiere, After Effects, Motion Graphics, Promo Trailers)",
+            "4. Product Building & AI (React, FastAPI, LLM Agents, Next.js, Tailoring AI Pipelines)"
+          ]
+        },
+        {
+          "id": "editorial_marquee",
+          "name": "Slow Editorial Ticker",
+          "text": "PRODUCT MANAGEMENT • AI PRODUCT BUILDING • MOTION DESIGN • HYPER-FAST SHIPPING • VISUAL INTEGRITY • FOUNDER MINDSET •"
+        },
+        {
+          "id": "contact_cta",
+          "name": "Chassis Control Closing CTA",
+          "features": [
+            "Interactive 'Book a Call' Calendly modal/trigger",
+            "Copy Email to Clipboard button with click sound & toast feedback",
+            "Download Resume / Spec Sheet button",
+            "Social links (GitHub, X/Twitter, LinkedIn, YouTube)"
+          ]
+        }
+      ]
+    },
+    "previews_page": {
+      "route": "/previews",
+      "description": "Interactive gallery of 4 distinct retro visual theme worlds. Users can preview each style or switch the global portfolio theme to it.",
+      "previews": [
+        {
+          "id": "hardware",
+          "name": "Vintage Hardware (Braun / Teenage Engineering)",
+          "palette": "Beige casing, chunky keys, rotary knobs, toggles, warm amber LED",
+          "vibe": "Physical tactile precision engineering"
+        },
+        {
+          "id": "win95",
+          "name": "Old Computer Desktop (Win95 / Early Mac)",
+          "palette": "Classic teal bg #008080, bevelled grey draggable windows, pixelated typography, Start button",
+          "vibe": "Nostalgic computing power"
+        },
+        {
+          "id": "catalogue",
+          "name": "1970s Printed Industrial Catalogue",
+          "palette": "Textured warm paper #F7F4EB, bold editorial serif headlines, grid rules, order item numbers",
+          "vibe": "Swiss editorial elegance and archival authenticity"
+        },
+        {
+          "id": "arcade",
+          "name": "CRT Arcade / Retro Television",
+          "palette": "Scanlines overlay, phosphor green/amber CRT glow, channel rotary knob, curved glass bezel",
+          "vibe": "Cyber-retro arcade monitor display"
+        }
+      ]
+    }
+  },
+  "component_path": {
+    "header": "/app/frontend/src/components/Header.jsx",
+    "hero": "/app/frontend/src/components/HeroHardware.jsx",
+    "manifesto": "/app/frontend/src/components/ManifestoSection.jsx",
+    "products": "/app/frontend/src/components/ProductShowcase.jsx",
+    "product_modal": "/app/frontend/src/components/ProductDetailModal.jsx",
+    "skills": "/app/frontend/src/components/SkillsBento.jsx",
+    "marquee": "/app/frontend/src/components/EditorialMarquee.jsx",
+    "contact": "/app/frontend/src/components/ContactSection.jsx",
+    "previews_page": "/app/frontend/src/components/StylePreviewsPage.jsx",
+    "sound_utility": "/app/frontend/src/lib/soundEffects.js"
+  },
+  "image_urls": {
+    "hardware_synth_1": "https://images.unsplash.com/photo-1603032758338-20d5e8882721?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "hardware_synth_2": "https://images.unsplash.com/photo-1733900606117-2522d8ed3a7b?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "modular_synth": "https://images.unsplash.com/photo-1776785941033-6c458bd3506e?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "workspace_laptop": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "workspace_setup": "https://images.unsplash.com/photo-1715078795172-c1636d5bc845?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "designer_desk": "https://images.unsplash.com/photo-1604074131228-9d48b811bd80?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "testing_and_data_attrs": {
+    "rules": "All buttons, toggles, dialog triggers, tabs, links, and forms must include testable kebab-case data-testid attributes.",
+    "examples": [
+      "data-testid=\"nav-previews-link\"",
+      "data-testid=\"sound-toggle-button\"",
+      "data-testid=\"hero-3d-chassis\"",
+      "data-testid=\"product-card-01\"",
+      "data-testid=\"inspect-product-button-01\"",
+      "data-testid=\"product-modal-close-button\"",
+      "data-testid=\"preview-theme-hardware\"",
+      "data-testid=\"preview-theme-win95\"",
+      "data-testid=\"preview-theme-catalogue\"",
+      "data-testid=\"preview-theme-arcade\"",
+      "data-testid=\"book-call-cta-button\"",
+      "data-testid=\"copy-email-button\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Ensure the React app uses JavaScript (.jsx / .js) files matching existing frontend setup.",
+    "Implement Web Audio API click synthesis in lib/soundEffects.js so buttons make realistic physical clicks when sound is enabled.",
+    "Provide a seamless header navigation that includes the Sound Switch, Theme Switcher, and a link to '/previews'.",
+    "Build the 4 clickable interactive style previews on '/previews' with immediate preview switching capability.",
+    "Include sample rich data for 6 realistic AI/SaaS products with full details (Problem, Solution, Built With, Result Metrics, Live Demo Link).",
+    "Ensure high contrast compliance, accessible keyboard focus rings, and responsive grid arrangements.",
+    "Place data-testid on every interactive element."
+  ]
+}

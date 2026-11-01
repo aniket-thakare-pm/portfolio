@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: "Familjen Grotesk", ui-sans-serif, sans-serif;
+    background: #F4F1EA;
+    color: #1C1917;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: #FF5A00; color: #1C1917; }
+
+@layer base {
+    :root {
+        --background: 42 30% 94%;
+        --foreground: 24 10% 10%;
+        --card: 40 50% 98%;
+        --card-foreground: 24 10% 10%;
+        --popover: 40 50% 98%;
+        --popover-foreground: 24 10% 10%;
+        --primary: 21 100% 50%;
+        --primary-foreground: 24 10% 10%;
+        --secondary: 42 25% 88%;
+        --secondary-foreground: 24 10% 10%;
+        --muted: 42 25% 88%;
+        --muted-foreground: 25 6% 33%;
+        --accent: 42 25% 88%;
+        --accent-foreground: 24 10% 10%;
+        --destructive: 0 72% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 43 20% 79%;
+        --input: 43 20% 79%;
+        --ring: 21 100% 50%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body { @apply bg-background text-foreground; }
+}
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
