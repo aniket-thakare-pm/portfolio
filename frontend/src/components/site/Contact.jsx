@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Mail, PhoneCall } from "lucide-react";
 import { OWNER } from "@/data/content";
 import { Logo } from "./Logo";
@@ -32,7 +31,8 @@ export const Contact = () => (
       <footer className="mt-20 flex flex-col gap-6 border-t border-[#2B2824] pt-8 sm:flex-row sm:items-center sm:justify-between" data-testid="site-footer">
         <div className="flex items-center gap-3"><Logo size={36} /><span className="font-mono text-xs uppercase tracking-[0.2em] text-[#A8A29E]">{OWNER.name} · {OWNER.location}</span></div>
         <div className="flex items-center gap-6 font-mono text-xs uppercase tracking-[0.2em] text-[#A8A29E]">
-          <Link to="/previews" data-sound="tick" data-testid="footer-previews-link" className="hover:text-[#FF7A2E]">Style previews</Link>
+          <a href={OWNER.linkedin} target="_blank" rel="noopener noreferrer" data-sound="tick" className="hover:text-[#FF7A2E] transition-colors">LinkedIn</a>
+          <a href={OWNER.github} target="_blank" rel="noopener noreferrer" data-sound="tick" className="hover:text-[#FF7A2E] transition-colors">GitHub</a>
           <span>© {new Date().getFullYear()}</span>
         </div>
       </footer>

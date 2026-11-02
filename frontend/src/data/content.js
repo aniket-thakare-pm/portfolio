@@ -1,9 +1,11 @@
 export const OWNER = {
-  name: "[Your Name]",
-  initials: "YN",
-  email: "[your@email.com]",
-  calendar: "[Calendar link]",
-  location: "[City, Country]",
+  name: "Aniket Thakare",
+  initials: "AT",
+  email: "aathakare07@gmail.com",
+  calendar: "",
+  location: "IIT Kharagpur, India",
+  linkedin: "https://www.linkedin.com/in/aniket-a-thakare/",
+  github: "https://github.com/aniket-thakare-pm",
 };
 
 export const NAV = [

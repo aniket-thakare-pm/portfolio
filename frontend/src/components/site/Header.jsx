@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Github, Linkedin, Menu, X } from "lucide-react";
 import { NAV, OWNER } from "@/data/content";
 import { Logo } from "./Logo";
 import { SoundSwitch } from "./SoundSwitch";
@@ -21,12 +20,30 @@ export const Header = () => {
               {n.label}
             </a>
           ))}
-          <Link to="/previews" data-sound="tick" data-testid="nav-previews"
-            className="rounded-full px-4 py-2 font-mono text-[12px] uppercase tracking-[0.18em] text-[#B84300] hover:bg-[#EAE5D9]">
-            Styles
-          </Link>
         </nav>
         <div className="flex items-center gap-2">
+          <a
+            href={OWNER.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-sound="tick"
+            className="hidden sm:flex h-9 w-9 items-center justify-center rounded-xl transition-colors hover:bg-[#EAE5D9] text-[#1C1917]"
+            aria-label="LinkedIn Profile"
+            title="LinkedIn Profile"
+          >
+            <Linkedin size={18} />
+          </a>
+          <a
+            href={OWNER.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-sound="tick"
+            className="hidden sm:flex h-9 w-9 items-center justify-center rounded-xl transition-colors hover:bg-[#EAE5D9] text-[#1C1917]"
+            aria-label="GitHub Profile"
+            title="GitHub Profile"
+          >
+            <Github size={18} />
+          </a>
           <SoundSwitch />
           <button onClick={() => setOpen((v) => !v)} data-sound="click" data-testid="mobile-menu-btn"
             className="key flex h-10 w-10 items-center justify-center rounded-xl md:hidden" aria-label="Menu">
@@ -40,8 +57,14 @@ export const Header = () => {
             <a key={n.id} href={`#${n.id}`} onClick={() => setOpen(false)} data-sound="key" data-testid={`mobile-nav-${n.id}`}
               className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em]">{n.label}</a>
           ))}
-          <Link to="/previews" data-sound="key" data-testid="mobile-nav-previews"
-            className="key key-orange col-span-2 rounded-xl px-4 py-3 text-center font-mono text-xs uppercase tracking-[0.18em]">See the 4 styles</Link>
+          <a href={OWNER.linkedin} target="_blank" rel="noopener noreferrer" data-sound="key"
+            className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2">
+            <Linkedin size={14} /> LinkedIn
+          </a>
+          <a href={OWNER.github} target="_blank" rel="noopener noreferrer" data-sound="key"
+            className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2">
+            <Github size={14} /> GitHub
+          </a>
         </nav>
       )}
     </header>
