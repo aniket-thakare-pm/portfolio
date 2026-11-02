@@ -31,7 +31,7 @@ const Visual = ({ id }) => {
     );
   return (
     <div className="vfd rounded-xl p-3 font-vfd text-lg leading-tight">
-      &gt; idea → spec<br />&gt; build → ship<span className="blink">_</span>
+      &gt; problem → spec<br />&gt; model → ship<span className="blink">_</span>
     </div>
   );
 };
@@ -39,14 +39,18 @@ const Visual = ({ id }) => {
 export const Skills = () => (
   <section id="skills" className="px-5 py-24 sm:px-8 lg:py-32" data-testid="skills-section">
     <div className="mx-auto max-w-7xl">
-      <SectionLabel code="SEC_04 / SKILLS" title={<>Four crafts,<br />one workbench.</>} kicker="From the first question to the launch film." />
+      <SectionLabel
+        code="SEC_06 / CORE PM COMPETENCIES"
+        title={<>Four pillars,<br />one workbench.</>}
+        kicker="From initial customer discovery to production systems, quantitative metrics, and prototype craft."
+      />
       <div className="grid auto-rows-[minmax(240px,auto)] gap-5 md:grid-cols-2 lg:grid-cols-4">
         {SKILLS.map((s, i) => (
           <Reveal key={s.id} delay={i * 0.06} className={s.span}>
             <article data-testid={`skill-tile-${s.id}`} className="chassis flex h-full flex-col justify-between gap-8 rounded-[28px] p-7">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h3 className={`font-display font-black tracking-tight ${s.id === "product" ? "text-4xl sm:text-5xl" : "text-2xl sm:text-3xl"}`}>{s.title}</h3>
+                  <h3 className={`font-display font-black tracking-tight ${s.id === "product" ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"}`}>{s.title}</h3>
                   <p className="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-[#57534E]">{s.sub}</p>
                 </div>
                 <span className="font-vfd text-3xl text-[#57534E]">0{i + 1}</span>

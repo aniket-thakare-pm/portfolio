@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDownRight, Github, Linkedin } from "lucide-react";
 import { OWNER } from "@/data/content";
 
-const LINES = ["Right problems.", "Real products.", "Shipped fast."];
+const LINES = ["Right problems.", "Data-backed specs.", "Shipped fast."];
 
 export const HeroIntro = () => (
   <div data-testid="hero-intro">
@@ -21,12 +21,12 @@ export const HeroIntro = () => (
       ))}
     </h1>
     <p className="mt-5 max-w-lg text-sm leading-relaxed text-[#44403C] sm:mt-8 sm:text-lg">
-      I'm {OWNER.name}. I turn complex problems into live products using customer discovery, quantitative modeling, and code — then design and launch them myself.
+      I'm {OWNER.name}. An IIT Kharagpur engineer and Product Manager who bridges deep customer discovery, quantitative modeling, and code to turn ambiguous ideas into high-impact products.
     </p>
     <div className="mt-6 flex flex-wrap gap-3 sm:mt-10 sm:gap-4">
-      <a href="#products" data-sound="key" data-testid="hero-see-products-btn"
+      <a href="#built" data-sound="key" data-testid="hero-see-products-btn"
         className="key key-orange inline-flex items-center gap-2 rounded-2xl px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.15em] sm:px-6 sm:py-4 sm:text-sm">
-        Products <ArrowDownRight size={16} />
+        Things I Built <ArrowDownRight size={16} />
       </a>
       <a href={OWNER.linkedin} target="_blank" rel="noopener noreferrer" data-sound="key" data-testid="hero-linkedin-btn"
         className="key inline-flex items-center gap-2 rounded-2xl px-4 py-3 font-mono text-xs font-semibold uppercase tracking-[0.15em] sm:px-6 sm:py-4 sm:text-sm text-[#1C1917]">

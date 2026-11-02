@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { Header } from "@/components/site/Header";
 import { Chapter } from "@/components/site/Chapter";
-import { Manifesto } from "@/components/site/Manifesto";
-import { Products } from "@/components/site/Products";
+import { Experience } from "@/components/site/Experience";
 import { CaseStudies } from "@/components/site/CaseStudies";
+import { Products } from "@/components/site/Products";
+import { Manifesto } from "@/components/site/Manifesto";
 import { Story } from "@/components/story/Story";
 import { Skills } from "@/components/site/Skills";
-import { Marquee } from "@/components/site/Marquee";
 import { Contact } from "@/components/site/Contact";
 
 export default function Home() {
@@ -32,11 +32,11 @@ export default function Home() {
       <Header />
       <main>
         <Chapter />
-        <Story />
-        <Marquee />
-        <Manifesto />
+        <Experience />
         <CaseStudies />
         <Products />
+        <Manifesto />
+        <Story />
         <Skills />
         <Contact />
       </main>
