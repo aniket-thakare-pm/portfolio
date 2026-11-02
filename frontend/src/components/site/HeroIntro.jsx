@@ -6,8 +6,7 @@ const LINES = ["Right problems.", "Data-backed specs.", "Shipped fast."];
 
 export const HeroIntro = () => (
   <div data-testid="hero-intro">
-    <p className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-[#57534E] sm:text-xs">
-      <span className="rounded-full border border-[#1C1917] px-3 py-1 text-[#1C1917]">[SEC_00]</span>
+    <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-[#57534E] sm:text-sm font-semibold">
       Product Manager & 0-to-1 Builder
     </p>
     <h1 className="font-display text-[2.4rem] font-black leading-[0.95] tracking-tight sm:text-6xl lg:text-[4.1rem] xl:text-[4.6rem]" data-testid="hero-headline">

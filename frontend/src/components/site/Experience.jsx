@@ -5,10 +5,9 @@ export const Experience = () => {
   return (
     <section id="experience" className="px-5 py-20 sm:px-8 lg:py-28" data-testid="experience-section">
       <div className="mx-auto max-w-7xl">
-        {/* Clean, unambiguous section header */}
+        {/* Single clean heading + description */}
         <div className="mb-12">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#57534E]">Career History</p>
-          <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
             Work Experience
           </h2>
           <p className="mt-3 max-w-2xl text-base text-[#57534E] sm:text-lg">
@@ -16,7 +15,7 @@ export const Experience = () => {
           </p>
         </div>
 
-        {/* Clean, human, high-craft 2-column cards */}
+        {/* Clean, balanced 2-column cards */}
         <div className="grid gap-6 lg:grid-cols-2">
           {EXPERIENCES.map((exp, idx) => (
             <Reveal key={exp.company} delay={idx * 0.08}>
@@ -52,7 +51,7 @@ export const Experience = () => {
                   </ul>
                 </div>
 
-                {/* Bottom skill tags as crisp rounded rectangles (not bubbly pills) */}
+                {/* Bottom skill tags as crisp rounded rectangles */}
                 <div className="mt-8 flex flex-wrap gap-2 border-t border-[#D5CFBF] pt-5">
                   {exp.skills.map((skill) => (
                     <span

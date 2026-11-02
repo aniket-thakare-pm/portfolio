@@ -48,8 +48,7 @@ export const Products = () => {
     <section id="built" className="bg-[#EAE5D9] px-5 py-20 sm:px-8 lg:py-28" data-testid="products-section">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#57534E]">Software & Ventures</p>
-          <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
             Things I Built
           </h2>
           <p className="mt-3 max-w-2xl text-base text-[#57534E] sm:text-lg">

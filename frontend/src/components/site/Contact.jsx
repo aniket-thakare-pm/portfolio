@@ -8,7 +8,6 @@ export const Contact = () => (
   <section id="contact" className="bg-[#121110] px-5 pb-10 pt-20 text-[#F4F1EA] sm:px-8 lg:pt-28" data-testid="contact-section">
     <div className="mx-auto max-w-7xl">
       <Reveal>
-        <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#A8A29E]">Get In Touch</p>
         <h2 className="max-w-4xl font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl lg:text-7xl">
           Got a problem <span className="italic text-[#FF7A2E]" style={{ fontFamily: "Fraunces" }}>worth</span> solving?
         </h2>
