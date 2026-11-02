@@ -35,7 +35,7 @@ const JourneyText = ({ p, i, step, mobile }) => {
   const filter = useMotionTemplate`blur(${blur}px)`;
   const head = (
     <>
-      <p className="font-arcade text-[10px] text-[#FF7A2E]">STEP {step.no}</p>
+      <p className="font-arcade text-xs text-[#FF7A2E]">{step.no}</p>
       <h3 className="mt-3 font-display text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">{step.title}</h3>
     </>
   );

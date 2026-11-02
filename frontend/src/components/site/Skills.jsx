@@ -1,61 +1,53 @@
-import { SKILLS } from "@/data/content";
-import { Reveal, SectionLabel } from "./Reveal";
-
-const Visual = ({ id }) => {
-  if (id === "product")
-    return (
-      <div className="space-y-3">
-        {[["Discover", 38, "#1C1917"], ["Define", 56, "#57534E"], ["Build", 78, "#FF5A00"], ["Launch", 92, "#2F6F5E"]].map(([l, w, c]) => (
-          <div key={l} className="flex items-center gap-3">
-            <span className="w-20 font-mono text-[11px] uppercase tracking-[0.18em] text-[#57534E]">{l}</span>
-            <span className="h-3 flex-1 rounded-full bg-[#D5CFBF]"><span className="block h-3 rounded-full" style={{ width: `${w}%`, background: c }} /></span>
-          </div>
-        ))}
-      </div>
-    );
-  if (id === "design")
-    return (
-      <div className="flex gap-2">
-        {["#F4F1EA", "#EAE5D9", "#FF5A00", "#2F6F5E", "#1C1917"].map((c) => <span key={c} className="h-14 flex-1 rounded-xl border border-[#CFC7B5]" style={{ background: c }} />)}
-      </div>
-    );
-  if (id === "video")
-    return (
-      <div className="space-y-1.5 rounded-xl bg-[#1C1917] p-3">
-        {[[10, 50], [30, 40], [5, 80]].map(([l, w], i) => (
-          <div key={i} className="relative h-3 rounded bg-[#2B2824]">
-            <span className="absolute h-3 rounded" style={{ left: `${l}%`, width: `${w}%`, background: ["#FF7A2E", "#6BF5CB", "#C9A227"][i] }} />
-          </div>
-        ))}
-      </div>
-    );
-  return (
-    <div className="vfd rounded-xl p-3 font-vfd text-lg leading-tight">
-      &gt; problem → spec<br />&gt; model → ship<span className="blink">_</span>
-    </div>
-  );
-};
+import { SKILL_PILLARS } from "@/data/content";
+import { Reveal } from "./Reveal";
 
 export const Skills = () => (
-  <section id="skills" className="px-5 py-24 sm:px-8 lg:py-32" data-testid="skills-section">
+  <section id="skills" className="px-5 py-20 sm:px-8 lg:py-28" data-testid="skills-section">
     <div className="mx-auto max-w-7xl">
-      <SectionLabel
-        code="SEC_06 / CORE PM COMPETENCIES"
-        title={<>Four pillars,<br />one workbench.</>}
-        kicker="From initial customer discovery to production systems, quantitative metrics, and prototype craft."
-      />
-      <div className="grid auto-rows-[minmax(240px,auto)] gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {SKILLS.map((s, i) => (
-          <Reveal key={s.id} delay={i * 0.06} className={s.span}>
-            <article data-testid={`skill-tile-${s.id}`} className="chassis flex h-full flex-col justify-between gap-8 rounded-[28px] p-7">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className={`font-display font-black tracking-tight ${s.id === "product" ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"}`}>{s.title}</h3>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.15em] text-[#57534E]">{s.sub}</p>
+      <div className="mb-12">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#57534E]">Execution Stack</p>
+        <h2 className="mt-2 font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
+          Skills & Expertise
+        </h2>
+        <p className="mt-3 max-w-2xl text-base text-[#57534E] sm:text-lg">
+          Core PM competencies, data modeling, AI architectures, and technical prototyping.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {SKILL_PILLARS.map((pillar, i) => (
+          <Reveal key={pillar.category} delay={i * 0.06}>
+            <article
+              data-testid={`skill-pillar-${i}`}
+              className="flex h-full flex-col justify-between rounded-2xl border border-[#D5CFBF] bg-[#FDFBF7] p-6 shadow-[0_2px_0_0_#D5CFBF]"
+            >
+              <div>
+                {/* Pillar Header */}
+                <div className="flex items-center justify-between border-b border-[#D5CFBF] pb-4">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-[0.15em] text-[#B84300]">
+                    Pillar 0{i + 1}
+                  </span>
+                  <span className="font-mono text-xs text-[#8C827A]">
+                    {pillar.skills.length} skills
+                  </span>
                 </div>
-                <span className="font-vfd text-3xl text-[#57534E]">0{i + 1}</span>
+
+                <h3 className="mt-3 font-display text-xl font-bold tracking-tight text-[#1C1917]">
+                  {pillar.category}
+                </h3>
+
+                {/* Scannable, concrete skill badges */}
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {pillar.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-md border border-[#D5CFBF] bg-[#F4F1EA] px-2.5 py-1 font-mono text-xs text-[#1C1917]"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <Visual id={s.id} />
             </article>
           </Reveal>
         ))}

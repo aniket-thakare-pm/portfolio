@@ -19,8 +19,10 @@ export const CaseStudyPanel = ({ index, onClose, onNext }) => {
           <div>
             <div className="chassis-dark rounded-t-[28px] px-6 pb-10 pt-12 text-[#F4F1EA] sm:px-12">
               <p className="font-arcade text-[10px] text-[#FF7A2E]">CASE {c.no} / 0{CASE_STUDIES.length}</p>
-              <DialogTitle className="mt-4 font-display text-4xl font-black tracking-tight sm:text-6xl">{c.title}</DialogTitle>
-              <DialogDescription className="mt-3 text-base text-[#D6D3D1]">{c.area} · {c.role}</DialogDescription>
+              <DialogTitle className="mt-4 font-display text-4xl font-black tracking-tight sm:text-5xl">{c.title}</DialogTitle>
+              <DialogDescription className="mt-2 text-base text-[#D6D3D1]">
+                {c.subtitle} · <span className="text-[#FF7A2E]">{c.tag}</span> · {c.role}
+              </DialogDescription>
               <div className="mt-8 grid gap-3 sm:grid-cols-3">
                 {c.metrics.map(([l, v]) => (
                   <div key={l} className="rounded-2xl border border-[#2B2824] bg-[#1C1A18] p-5">

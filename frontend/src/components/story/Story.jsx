@@ -32,7 +32,7 @@ export const Story = () => {
         <button onClick={() => (open ? close() : setOpen(true))} data-sound="key" data-testid="story-toggle-btn" aria-expanded={open}
           className={`key ${open ? "key-ink" : ""} mx-auto flex w-full max-w-7xl items-center justify-between gap-6 rounded-[28px] px-6 py-7 text-left sm:px-10 sm:py-9`}>
           <span>
-            <span className={`block font-mono text-[11px] uppercase tracking-[0.25em] ${open ? "text-[#A8A29E]" : "text-[#57534E]"}`}>[Bonus track] · 07 steps</span>
+            <span className={`block font-mono text-[11px] uppercase tracking-[0.25em] ${open ? "text-[#A8A29E]" : "text-[#57534E]"}`}>[Bonus track] · Stages #01 – #07</span>
             <span className="mt-2 block font-display text-3xl font-black tracking-tight sm:text-5xl">
               My story <span className="italic text-[#FF5A00]" style={{ fontFamily: "Fraunces" }}>— how I got here</span>
             </span>
