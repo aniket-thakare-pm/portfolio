@@ -124,13 +124,13 @@ export const ROLE_LINES = [
 ];
 
 export const JOURNEY = [
-  { no: "01", obj: "edit", title: "Video editing", line: "[What this taught me — e.g. pacing, story and cutting what doesn't serve it.]" },
-  { no: "02", obj: "film", title: "Filmmaking", line: "[What this taught me.]" },
-  { no: "03", obj: "photo", title: "Photography", line: "[What this taught me.]" },
-  { no: "04", obj: "ps", title: "Photoshop", line: "[What this taught me.]" },
-  { no: "05", obj: "ui", title: "UI / UX", line: "[What this taught me.]" },
-  { no: "06", obj: "pm", title: "Product management", line: "[What this taught me.]" },
-  { no: "07", obj: "build", title: "Product building", line: "[What this taught me — and how it closes the loop.]" },
+  { no: "01", obj: "edit", title: "Video editing", line: "Taught me pacing, rhythm, and the ruthless discipline of cutting anything that doesn't serve the core story." },
+  { no: "02", obj: "film", title: "Filmmaking", line: "Directing cast and crew under tight deadlines taught me cross-functional alignment and steering people toward a unified vision." },
+  { no: "03", obj: "photo", title: "Photography", line: "Trained my eye for framing, composition, and learning how to isolate the essential signal from surrounding noise." },
+  { no: "04", obj: "ps", title: "Graphic design", line: "Taught me typography, visual weight, and spatial hierarchy — and that perceived quality directly dictates user trust." },
+  { no: "05", obj: "ui", title: "UI / UX", line: "Moving from static aesthetics to dynamic interaction — designing intuitive flows that minimize cognitive friction." },
+  { no: "06", obj: "pm", title: "Product management", line: "The strategic anchor: identifying the right problem, talking to real users, weighing hard trade-offs, and prioritizing outcomes." },
+  { no: "07", obj: "build", title: "Product building", line: "Closing the loop: using code and modern AI to take a concept from a PRD all the way to a live, working product in the real world." },
 ];
 
 const caseStudy = (no) => ({
