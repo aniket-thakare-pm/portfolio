@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { PRODUCTS } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { ProductDialog } from "./ProductDialog";
+import { ProductGraphic } from "./ProductGraphics";
 
 const spot = (e) => {
   const r = e.currentTarget.getBoundingClientRect();
@@ -10,30 +11,74 @@ const spot = (e) => {
   e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
 };
 
-const Card = ({ p, big, onOpen }) => (
-  <button onClick={onOpen} onMouseMove={spot} data-sound="open" data-testid={`product-card-${p.no}`}
-    className="chassis group relative flex h-full w-full flex-col overflow-hidden rounded-2xl p-3 text-left transition-transform duration-300 hover:-translate-y-1">
+const Card = ({ p, bannerHeight = "h-48", onOpen }) => (
+  <button
+    onClick={onOpen}
+    onMouseMove={spot}
+    data-sound="open"
+    data-testid={`product-card-${p.no}`}
+    className="chassis group relative flex h-full w-full flex-col overflow-hidden rounded-2xl p-3 text-left transition-transform duration-300 hover:-translate-y-1"
+  >
     <span className="spot pointer-events-none absolute inset-0 z-10" />
+
+    {/* TV Bezel / Clip Frame */}
     <div className="clip-frame rounded-xl bg-[#1C1917] p-[6px]">
-      <div className={`clip-screen relative overflow-hidden ${big ? "h-60 sm:h-72" : "h-44"}`} style={{ background: p.color }}>
-        <div className="grille absolute inset-0 opacity-30 mix-blend-multiply" />
+      <div
+        className={`clip-screen relative overflow-hidden ${bannerHeight}`}
+        style={{ background: p.color }}
+      >
+        <div className="grille absolute inset-0 opacity-25 mix-blend-multiply" />
         <div className="scanlines absolute inset-0 opacity-20" />
-        <span className="absolute left-5 top-4 font-vfd text-2xl text-white/90">No. {p.no}</span>
-        <span className="absolute right-4 top-4 rounded-md bg-[#F4F1EA] px-3 py-1 font-mono text-[11px] uppercase tracking-[0.15em] text-[#1C1917] font-semibold">{p.status}</span>
-        <span className={`absolute bottom-3 left-5 font-wide font-black leading-none text-white/95 ${big ? "text-6xl sm:text-7xl" : "text-4xl sm:text-5xl"}`}>{p.no}</span>
-        <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#F4F1EA] text-[#1C1917] transition-transform duration-300 group-hover:rotate-45">
-          <ArrowUpRight size={18} />
+
+        {/* Custom Retro Vector Graphic */}
+        <div className="absolute inset-0 flex items-center justify-center p-3 opacity-90 transition-transform duration-500 group-hover:scale-105">
+          <ProductGraphic type={p.graphicType} className="h-full w-full text-white/90" />
+        </div>
+
+        {/* Number badge (Top Left) */}
+        <span className="absolute left-4 top-3.5 font-vfd text-xl sm:text-2xl text-white/95 drop-shadow-sm">
+          No. {p.no}
+        </span>
+
+        {/* Category Badge (Top Right) */}
+        <span className="absolute right-3.5 top-3.5 rounded-md bg-[#F4F1EA] px-2.5 py-1 font-mono text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.14em] text-[#1C1917] shadow-sm">
+          {p.categoryBadge}
+        </span>
+
+        {/* Operational Status (Bottom Left) */}
+        <span className="absolute bottom-3 left-4 rounded-md border border-white/15 bg-black/45 px-2.5 py-1 font-mono text-[10px] sm:text-[11px] text-white/90 backdrop-blur-sm">
+          {p.status}
+        </span>
+
+        {/* Circular Action Arrow (Bottom Right) */}
+        <span className="absolute bottom-3 right-3.5 flex h-9 w-9 items-center justify-center rounded-full bg-[#F4F1EA] text-[#1C1917] shadow-md transition-transform duration-300 group-hover:rotate-45">
+          <ArrowUpRight size={17} />
         </span>
       </div>
     </div>
-    <div className="flex flex-1 flex-col justify-between gap-4 px-3 pb-3 pt-5">
+
+    {/* Card Metadata Body */}
+    <div className="flex flex-1 flex-col justify-between gap-3 px-3 pb-2 pt-4">
       <div>
-        <h3 className="font-display text-2xl font-black tracking-tight text-[#1C1917]">{p.name}</h3>
-        <p className="mt-1 font-mono text-xs text-[#57534E]">{p.kind}</p>
+        <div className="flex items-baseline justify-between gap-2">
+          <h3 className="font-display text-2xl font-black tracking-tight text-[#1C1917]">
+            {p.name}
+          </h3>
+        </div>
+        <p className="mt-1 font-mono text-xs font-semibold text-[#57534E]">
+          {p.kind}
+        </p>
+        <p className="mt-2 text-xs leading-relaxed text-[#44403C] line-clamp-2">
+          {p.problem}
+        </p>
       </div>
-      <div className="flex flex-wrap gap-1.5">
+
+      <div className="flex flex-wrap gap-1.5 pt-1">
         {p.tags.map((t) => (
-          <span key={t} className="rounded-md border border-[#D5CFBF] bg-[#FDFBF7] px-2.5 py-0.5 font-mono text-[11px] text-[#1C1917]">
+          <span
+            key={t}
+            className="rounded-md border border-[#D5CFBF] bg-[#FDFBF7] px-2 py-0.5 font-mono text-[10px] sm:text-[11px] text-[#1C1917]"
+          >
             {t}
           </span>
         ))}
@@ -44,6 +89,12 @@ const Card = ({ p, big, onOpen }) => (
 
 export const Products = () => {
   const [open, setOpen] = useState(null);
+
+  // Scalex and Dezine (Top tier)
+  const topTier = PRODUCTS.slice(0, 2);
+  // UBS Engine, LOCUS, FinTrack (Bottom tier)
+  const bottomTier = PRODUCTS.slice(2);
+
   return (
     <section id="built" className="bg-[#EAE5D9] px-5 py-20 sm:px-8 lg:py-28" data-testid="products-section">
       <div className="mx-auto max-w-7xl">
@@ -52,18 +103,29 @@ export const Products = () => {
             Things I Built
           </h2>
           <p className="mt-3 max-w-2xl text-base text-[#57534E] sm:text-lg">
-            Commercial B2B SaaS, workflow automation, econometric choice simulations, and native mobile apps.
+            Commercial startups, creative operations, econometric choice simulations, and local-first software.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {PRODUCTS.map((p, i) => (
-            <Reveal key={p.no} delay={(i % 3) * 0.06} className={i === 0 ? "md:col-span-2" : ""}>
-              <Card p={p} big={i === 0} onOpen={() => setOpen(p)} />
+        {/* TOP TIER: Scalex (Startup) & Dezine (Agency) with Equal Heights */}
+        <div className="mb-6 grid gap-6 md:grid-cols-2">
+          {topTier.map((p, i) => (
+            <Reveal key={p.no} delay={i * 0.08}>
+              <Card p={p} bannerHeight="h-56" onOpen={() => setOpen(p)} />
+            </Reveal>
+          ))}
+        </div>
+
+        {/* BOTTOM TIER: Technical Side Projects (UBS Engine, LOCUS, FinTrack) */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {bottomTier.map((p, i) => (
+            <Reveal key={p.no} delay={0.16 + i * 0.08}>
+              <Card p={p} bannerHeight="h-44" onOpen={() => setOpen(p)} />
             </Reveal>
           ))}
         </div>
       </div>
+
       <ProductDialog product={open} onClose={() => setOpen(null)} />
     </section>
   );

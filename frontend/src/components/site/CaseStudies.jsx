@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText, Lock } from "lucide-react";
 import { CASE_STUDIES } from "@/data/content";
 import { Reveal } from "./Reveal";
 import { CaseStudyPanel } from "./CaseStudyPanel";
@@ -27,7 +27,7 @@ export const CaseStudies = () => {
                 onClick={() => setOpen(i)}
                 data-sound="open"
                 data-testid={`case-card-${c.no}`}
-                className="chassis-dark group flex h-full min-h-[440px] w-full flex-col justify-between rounded-2xl p-6 text-left text-[#F4F1EA] transition-transform duration-300 hover:-translate-y-1"
+                className="chassis-dark group flex h-full min-h-[450px] w-full flex-col justify-between rounded-2xl p-6 text-left text-[#F4F1EA] transition-transform duration-300 hover:-translate-y-1"
               >
                 <div>
                   {/* Top Bar with Number & Arrow */}
@@ -52,14 +52,27 @@ export const CaseStudies = () => {
                   </div>
 
                   {/* Role line below the box */}
-                  <p className="mt-4 font-mono text-xs text-[#A8A29E]">
-                    {c.role}
-                  </p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <p className="font-mono text-xs text-[#A8A29E]">
+                      {c.role}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Bottom Metric */}
+                {/* Bottom Metric + Deck / NDA status */}
                 <div className="mt-6 border-t border-[#2B2824] pt-4">
-                  <p className="font-display text-4xl font-black text-[#FF7A2E]">{c.result}</p>
+                  <div className="flex items-baseline justify-between">
+                    <p className="font-display text-4xl font-black text-[#FF7A2E]">{c.result}</p>
+                    {c.deckUrl ? (
+                      <span className="inline-flex items-center gap-1 rounded border border-[#FF7A2E]/40 bg-[#29221C] px-2 py-0.5 font-mono text-[10px] text-[#FF7A2E]">
+                        <FileText size={10} /> Deck
+                      </span>
+                    ) : c.confidential ? (
+                      <span className="inline-flex items-center gap-1 rounded border border-white/10 bg-white/5 px-2 py-0.5 font-mono text-[10px] text-[#A8A29E]">
+                        <Lock size={10} /> NDA
+                      </span>
+                    ) : null}
+                  </div>
                   <p className="mt-1 text-xs text-[#D6D3D1] font-mono">{c.resultLabel}</p>
                 </div>
               </button>
@@ -67,7 +80,11 @@ export const CaseStudies = () => {
           ))}
         </div>
       </div>
-      <CaseStudyPanel index={open} onClose={() => setOpen(-1)} onNext={() => setOpen((i) => (i + 1) % CASE_STUDIES.length)} />
+      <CaseStudyPanel
+        index={open}
+        onClose={() => setOpen(-1)}
+        onNext={() => setOpen((i) => (i + 1) % CASE_STUDIES.length)}
+      />
     </section>
   );
 };
