@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { ArrowDown } from "lucide-react";
 import { EXPERIENCES, HERO_BEATS } from "@/data/content";
 import { Mac3D } from "@/components/mac/Mac3D";
 import { HeroIntro } from "./HeroIntro";
 import { ChapterLine } from "./ChapterLine";
 import { ExperienceDialog } from "./ExperienceDialog";
 import { useIsMobile } from "@/lib/useIsMobile";
+import { playSound } from "@/lib/sound";
 
 const MacScale = ({ children }) => (
   <div className="scale-[0.62] sm:scale-90 lg:scale-[1.05] xl:scale-[1.15]">{children}</div>
@@ -16,6 +18,23 @@ const HERO_PRODUCT = {
   company: "Aniket Thakare",
   name: "Aniket Thakare",
   pixel: ["..####..", ".######.", "###..###", "###..###", ".######.", "..####..", "..####..", ".######."],
+};
+
+export const scrollToExperience = () => {
+  playSound("key");
+  const topEl = document.getElementById("top");
+  if (topEl) {
+    const rect = topEl.getBoundingClientRect();
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const sectionTop = rect.top + scrollY;
+    const totalScroll = topEl.offsetHeight - window.innerHeight;
+    const targetY = sectionTop + totalScroll * 0.22;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(targetY, { duration: 1.2 });
+    } else {
+      window.scrollTo({ top: targetY, behavior: "smooth" });
+    }
+  }
 };
 
 const StaticChapter = () => {
@@ -34,6 +53,7 @@ const StaticChapter = () => {
 
   return (
     <section id="top" className="px-5 pb-20 pt-28 sm:px-8" data-testid="chapter-static">
+      <div id="experience" className="absolute pointer-events-none" style={{ top: "52.8vh" }} />
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
         <HeroIntro />
         <div className="flex justify-center">
@@ -42,6 +62,23 @@ const StaticChapter = () => {
           </MacScale>
         </div>
       </div>
+
+      {/* Centered Scroll Prompt */}
+      <div className="mx-auto mt-12 text-center">
+        <a
+          href="#experience"
+          data-sound="tick"
+          className="group inline-flex flex-col items-center gap-2"
+        >
+          <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#57534E] group-hover:text-[#1C1917] transition-colors">
+            Don&apos;t take my word for it. Take the numbers.
+          </span>
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D5CFBF] bg-[#FAF8F5] text-[#FF5A00] shadow-sm transition-all group-hover:border-[#FF5A00] group-hover:bg-white group-hover:shadow-md">
+            <ArrowDown size={18} className="animate-bounce" />
+          </span>
+        </a>
+      </div>
+
       <div className="mx-auto mt-16 max-w-7xl">
         <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#78716C]">Proven Impact</p>
         <div className="grid gap-4 sm:grid-cols-3">
@@ -167,6 +204,9 @@ const PinnedChapter = () => {
 
   return (
     <section ref={ref} id="top" className="relative h-[340vh]" data-testid="chapter-section">
+      {/* Target anchor that places the viewport directly at Tile 01 (LimeChat) */}
+      <div id="experience" className="absolute pointer-events-none" style={{ top: "52.8vh" }} />
+
       <div className="sticky top-0 h-screen overflow-hidden">
         {HERO_BEATS.map((beat, i) => (
           <ChapterLine
@@ -193,6 +233,7 @@ const PinnedChapter = () => {
           </motion.div>
         </div>
 
+        {/* Hero Left Content */}
         <div
           className={`pointer-events-none absolute ${
             mobile
@@ -202,6 +243,26 @@ const PinnedChapter = () => {
         >
           <motion.div style={{ opacity: introO, y: introY, pointerEvents: introPE }}>
             <HeroIntro />
+          </motion.div>
+        </div>
+
+        {/* Centered Scroll Indicator Bar (Visible only during Hero, disappears on scroll) */}
+        <div className="pointer-events-none absolute bottom-8 sm:bottom-10 inset-x-0 mx-auto flex flex-col items-center justify-center text-center z-20 px-4">
+          <motion.div style={{ opacity: introO, y: introY, pointerEvents: introPE }}>
+            <button
+              type="button"
+              onClick={scrollToExperience}
+              data-sound="tick"
+              className="group pointer-events-auto flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-105 active:scale-95"
+              title="Jump to Experience"
+            >
+              <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#57534E] group-hover:text-[#1C1917] transition-colors">
+                Don&apos;t take my word for it. Take the numbers.
+              </span>
+              <span className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#D5CFBF] bg-[#FAF8F5] text-[#FF5A00] shadow-sm transition-all group-hover:border-[#FF5A00] group-hover:bg-white group-hover:shadow-md">
+                <ArrowDown size={18} className="animate-bounce text-[#FF5A00]" />
+              </span>
+            </button>
           </motion.div>
         </div>
 

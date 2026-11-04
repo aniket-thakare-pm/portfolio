@@ -1,24 +1,15 @@
 import { SKILL_PILLARS } from "@/data/content";
 import { Reveal } from "./Reveal";
-import { Wrench } from "lucide-react";
 
 export const Skills = () => (
   <section id="skills" className="px-5 py-16 sm:px-8 lg:py-20" data-testid="skills-section">
     <div className="mx-auto max-w-7xl">
-      {/* Header */}
+      {/* Clean Single Heading without AI filler */}
       <Reveal>
-        <div className="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-          <div>
-            <div className="inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-[#B84300]">
-              <Wrench size={13} /> PM & Builder Toolkit
-            </div>
-            <h2 className="mt-2 font-display text-3xl font-black tracking-tight text-[#1C1917] sm:text-4xl lg:text-5xl">
-              Methods & Technical Stack
-            </h2>
-          </div>
-          <p className="max-w-md font-mono text-xs text-[#57534E] sm:text-right">
-            Verified across 80K+ calls, 2 national gold medals & 5 shipped products.
-          </p>
+        <div className="mb-8">
+          <h2 className="font-display text-3xl font-black tracking-tight text-[#1C1917] sm:text-4xl lg:text-5xl">
+            Skills and Tools
+          </h2>
         </div>
       </Reveal>
 

@@ -55,7 +55,7 @@ export const HERO_BEATS = [
 ];
 
 export const NAV = [
-  { id: "top", label: "Experience" },
+  { id: "experience", label: "Experience" },
   { id: "cases", label: "Case Studies" },
   { id: "built", label: "Things I Built" },
   { id: "skills", label: "Skills" },

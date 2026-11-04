@@ -68,10 +68,5 @@ export const HeroIntro = () => (
         <Github size={16} /> GitHub <ArrowUpRight size={14} className="opacity-50" />
       </a>
     </div>
-
-    <div className="mt-7 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#78716C] sm:mt-9 sm:text-xs">
-      <span>Don&apos;t take my word for it. Take the numbers.</span>
-      <span className="inline-block animate-bounce font-bold text-[#FF5A00]">↓</span>
-    </div>
   </div>
 );
