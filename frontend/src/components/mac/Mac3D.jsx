@@ -10,13 +10,7 @@ const W = 280, H = 330, D = 250;
 const f = (w, h, t) => ({ width: w, height: h, marginLeft: -w / 2, marginTop: -h / 2, transform: t });
 
 const useBoot = () => {
-  const [phase, setPhase] = useState("off");
-  useEffect(() => {
-    const a = setTimeout(() => setPhase("boot"), 900);
-    const b = setTimeout(() => setPhase("hello"), 1500);
-    const c = setTimeout(() => setPhase("ready"), 3200);
-    return () => { clearTimeout(a); clearTimeout(b); clearTimeout(c); };
-  }, []);
+  const [phase] = useState("ready");
   return phase;
 };
 
@@ -74,17 +68,16 @@ export const Mac3D = ({ rotateY = -24, rotateX = -9, hl = 40, product = PRODUCTS
           <div className="mac-vents absolute inset-x-[40px] top-[40px] h-[90px]" />
           <span className="absolute bottom-[40px] left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.3em] text-[#6B6255]">PM-01 · Product machine</span>
         </div>
-        <div className="mac-face mac-side" style={f(D, H, `rotateY(90deg) translateZ(${W / 2}px)`)}>
-          <div className="mac-vents absolute left-[30px] right-[30px] top-[30px] h-[60px]" />
-        </div>
         <div className="mac-face mac-side" style={f(D, H, `rotateY(-90deg) translateZ(${W / 2}px)`)}>
-          <div className="mac-vents absolute left-[30px] right-[30px] top-[30px] h-[60px]" />
+          <div className="mac-handle absolute left-1/2 top-[40px] h-[36px] w-[90px] -translate-x-1/2 rounded-[8px]" />
+        </div>
+        <div className="mac-face mac-side" style={f(D, H, `rotateY(90deg) translateZ(${W / 2}px)`)}>
+          <div className="mac-handle absolute left-1/2 top-[40px] h-[36px] w-[90px] -translate-x-1/2 rounded-[8px]" />
         </div>
         <div className="mac-face mac-top" style={f(W, D, `rotateX(90deg) translateZ(${H / 2}px)`)} />
         <div className="mac-face mac-bottom" style={f(W, D, `rotateX(-90deg) translateZ(${H / 2}px)`)} />
-        <MacKeyboard onKey={press} y={H / 2 + 34} z={D / 2 + 80} />
+        <MacKeyboard onTap={(k) => press(k)} gameReady={gameReady} />
       </motion.div>
-      <div className="floor-shadow pointer-events-none absolute bottom-0 left-1/2 -z-10 h-[50px] w-[380px] -translate-x-1/2" />
     </div>
   );
 };
