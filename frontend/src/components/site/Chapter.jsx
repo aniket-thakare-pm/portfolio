@@ -23,7 +23,7 @@ const StaticChapter = () => (
       <HeroIntro />
       <div className="flex justify-center">
         <MacScale>
-          <Mac3D rotateY={-18} product={HERO_PRODUCT} />
+          <Mac3D rotateY={-22} product={HERO_PRODUCT} />
         </MacScale>
       </div>
     </div>
@@ -33,23 +33,25 @@ const StaticChapter = () => (
         {HERO_BEATS.map((beat) => (
           <div
             key={beat.company}
-            className="rounded-2xl border border-[#2D2A26] bg-[#141210] p-5 shadow-lg text-[#FAF8F5]"
+            className="rounded-2xl border border-[#D5CFBF] bg-[#FAF8F5] p-5 shadow-sm text-[#1C1917]"
           >
-            <div className="flex items-center justify-between text-xs font-mono text-[#A8A29E]">
-              <span className="font-bold text-white">{beat.company}</span>
-              <span className="text-[#FF5A00] font-semibold">{beat.tag}</span>
+            <div className="flex items-center justify-between text-xs font-mono text-[#78716C]">
+              <span className="font-bold text-[#1C1917]">{beat.company}</span>
+              <span className="rounded-full bg-[#1C1917] px-2 py-0.5 text-[10px] font-bold text-[#86efac]">
+                {beat.tag}
+              </span>
             </div>
-            <div className="mt-3 font-display text-2xl font-black text-white">{beat.metric}</div>
+            <div className="mt-3 font-display text-2xl font-black text-[#1C1917]">{beat.metric}</div>
             <div className="mt-1 font-mono text-[11px] uppercase text-[#FF5A00]">{beat.metricLabel}</div>
-            <p className="mt-2 text-xs text-[#A8A29E]">{beat.metricContext}</p>
-            <div className="mt-3 pt-2 border-t border-[#262320]">
-              <span className="text-xs font-bold text-white">{beat.shipTitle}</span>
-              <p className="mt-0.5 text-xs text-[#D6D3D1]">{beat.shipDetail}</p>
+            <p className="mt-2 text-xs text-[#57534E]">{beat.metricContext}</p>
+            <div className="mt-3 pt-2 border-t border-[#D5CFBF]/80">
+              <span className="text-xs font-bold text-[#1C1917]">{beat.shipTitle}</span>
+              <p className="mt-0.5 text-xs text-[#57534E]">{beat.shipDetail}</p>
             </div>
             <div className="mt-4">
               <a
                 href={beat.target}
-                className="font-mono text-xs font-bold text-[#FF5A00] hover:text-[#FFA066]"
+                className="font-mono text-xs font-bold text-[#FF5A00] hover:text-[#C83E00]"
               >
                 See in detail →
               </a>
@@ -66,37 +68,35 @@ const PinnedChapter = () => {
   const mobile = useIsMobile();
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
-  // Monitor rotation: always facing front/viewer, angling toward active card
-  // Hero: -18deg -> Limechat (left card): -24deg -> Gen AI Labs (right card): +24deg -> Meesho (left card): -24deg -> Flat front: 0deg
+  // Complete 360-degree continuous rotation:
+  // - Hero: -22deg
+  // - Tile 1 (Left): -45deg to -60deg (angled toward Left tile)
+  // - Rapid turn through the back: -60deg -> -300deg (between Tile 1 & Tile 2)
+  // - Tile 2 (Right): -325deg (which is +35deg facing Right tile)
+  // - Tile 3 (Left): completes rotation to -395deg (which is -35deg facing Left tile)
+  // - Settles front at -360deg
   const raw = useTransform(
     p,
-    [0, 0.10, 0.36, 0.44, 0.66, 0.74, 0.92, 1.0],
-    [-18, -24, -24, 24, 24, -24, -24, 0]
+    [0, 0.10, 0.23, 0.36, 0.44, 0.50, 0.62, 0.70, 0.75, 0.88, 1.0],
+    [-22, -28, -45, -60, -300, -325, -340, -370, -395, -410, -360]
   );
-  const rotateY = useSpring(raw, { stiffness: 80, damping: 22, mass: 0.6 });
+  const rotateY = useSpring(raw, { stiffness: 70, damping: 20, mass: 0.6 });
   const hl = useTransform(rotateY, (v) => ((((-v) % 180) + 180) % 180) / 180 * 160 - 30);
 
-  // Monitor position: moves opposite to the card
-  // Hero: right side (20vw)
-  // Beat 0 (Limechat on left): Mac stays on right (18vw)
-  // Beat 1 (Gen AI Labs on right): Mac moves across to left (-18vw)
-  // Beat 2 (Meesho DICE on left): Mac moves back to right (18vw)
-  // End: centers (0vw)
+  // Position: starts on right (22vw) during hero to give text room, then stays centered (0vw) throughout
   const x = useTransform(
     p,
-    [0, 0.10, 0.36, 0.44, 0.66, 0.74, 0.92, 1.0],
-    mobile
-      ? ["0vw", "0vw", "0vw", "0vw", "0vw", "0vw", "0vw", "0vw"]
-      : ["20vw", "18vw", "18vw", "-18vw", "-18vw", "18vw", "18vw", "0vw"]
+    [0, 0.10, 1.0],
+    mobile ? ["0vw", "0vw", "0vw"] : ["22vw", "0vw", "0vw"]
   );
 
   const y = useTransform(
     p,
-    [0, 0.10, 0.88, 0.94],
+    [0, 0.10, 0.85, 0.90],
     mobile ? ["24vh", "0vh", "0vh", "4vh"] : ["3vh", "0vh", "0vh", "0vh"]
   );
-  const scale = useTransform(p, [0.88, 0.94], [1, 0.92]);
-  const hintO = useTransform(p, [0.90, 0.95], [0, 1]);
+  const scale = useTransform(p, [0.85, 0.90], [1, 0.92]);
+  const hintO = useTransform(p, [0.88, 0.92], [0, 1]);
 
   const [activeBeat, setActiveBeat] = useState(null); // null = Hero
   const [gameReady, setGameReady] = useState(false);
@@ -105,21 +105,21 @@ const PinnedChapter = () => {
   const introY = useTransform(p, [0, 0.08], [0, -50]);
   const introPE = useTransform(introO, (v) => (v < 0.2 ? "none" : "auto"));
 
-  // Progress bar only visible during beats (hidden in Hero section)
-  const barOpacity = useTransform(p, [0.08, 0.12, 0.90, 0.94], [0, 1, 1, 0]);
-  const bar = useTransform(p, [0.12, 0.90], [0, 1]);
+  // Progress bar strictly hidden in Hero section, only visible during scrolling tiles
+  const barOpacity = useTransform(p, [0.08, 0.12, 0.86, 0.90], [0, 1, 1, 0]);
+  const bar = useTransform(p, [0.10, 0.86], [0, 1]);
 
   useMotionValueEvent(p, "change", (v) => {
-    if (v < 0.12) {
+    if (v < 0.10) {
       setActiveBeat(null);
-    } else if (v < 0.40) {
+    } else if (v < 0.36) {
       setActiveBeat(0);
-    } else if (v < 0.70) {
+    } else if (v < 0.62) {
       setActiveBeat(1);
     } else {
       setActiveBeat(2);
     }
-    setGameReady(v >= 0.92);
+    setGameReady(v >= 0.88);
   });
 
   const currentProduct = activeBeat === null ? HERO_PRODUCT : HERO_BEATS[activeBeat];
@@ -132,7 +132,8 @@ const PinnedChapter = () => {
           <ChapterLine key={beat.company} p={p} i={i} beat={beat} mobile={mobile} />
         ))}
 
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* Mac anchored in the center */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <motion.div style={{ x, y, scale }}>
             <MacScale>
               <Mac3D
