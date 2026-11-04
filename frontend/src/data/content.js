@@ -58,6 +58,7 @@ export const NAV = [
   { id: "experience", label: "Experience" },
   { id: "cases", label: "Case Studies" },
   { id: "built", label: "Things I Built" },
+  { id: "leadership", label: "Leadership" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
@@ -301,10 +302,34 @@ export const ROLE_LINES = [
   ["Shipped live to", "production."],
 ];
 
+export const LEADERSHIP = [
+  {
+    no: "01",
+    role: "Contingent Design Captain",
+    org: "InterIIT Tech Meet 14.0",
+    badge: "Captain",
+    tenure: "2025",
+  },
+  {
+    no: "02",
+    role: "Executive Head",
+    org: "Product Club, IIT Kharagpur",
+    badge: "Executive Head",
+    tenure: "2025 – 2026",
+  },
+  {
+    no: "03",
+    role: "Media & Public Relations Head",
+    org: "TeamKART (Formula Student Vehicle Project)",
+    badge: "Head of Media & PR",
+    tenure: "2024 – 2025",
+  },
+];
+
 export const JOURNEY = [
   { no: "#01", obj: "edit", title: "Video editing", line: "Taught me pacing, rhythm, and the ruthless discipline of cutting anything that doesn't serve the core story." },
-  { no: "#02", obj: "film", title: "Filmmaking", line: "Directing cast and crew under tight deadlines taught me cross-functional alignment and steering people toward a unified vision." },
-  { no: "#03", obj: "photo", title: "Photography", line: "Trained my eye for framing, composition, and learning how to isolate the essential signal from surrounding noise." },
+  { no: "#02", obj: "film", title: "Filmmaking", line: "Directing cast and crew at TFPS (Technology Filmmaking and Photography Society) taught me cross-functional alignment and steering people toward a unified vision." },
+  { no: "#03", obj: "photo", title: "Photography", line: "Trained my eye at TFPS for framing, composition, and learning how to isolate the essential signal from surrounding noise." },
   { no: "#04", obj: "ps", title: "Graphic design", line: "Taught me typography, visual weight, and spatial hierarchy — and that perceived quality directly dictates user trust." },
   { no: "#05", obj: "ui", title: "UI / UX", line: "Moving from static aesthetics to dynamic interaction — designing intuitive flows that minimize cognitive friction." },
   { no: "#06", obj: "pm", title: "Product management", line: "The strategic anchor: identifying the right problem, talking to real users, weighing hard trade-offs, and prioritizing outcomes." },

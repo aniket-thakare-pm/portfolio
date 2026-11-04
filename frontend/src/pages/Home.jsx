@@ -4,6 +4,7 @@ import { Header } from "@/components/site/Header";
 import { Chapter } from "@/components/site/Chapter";
 import { CaseStudies } from "@/components/site/CaseStudies";
 import { Products } from "@/components/site/Products";
+import { Leadership } from "@/components/site/Leadership";
 import { Story } from "@/components/story/Story";
 import { Skills } from "@/components/site/Skills";
 import { Contact } from "@/components/site/Contact";
@@ -33,6 +34,7 @@ export default function Home() {
         <Chapter />
         <CaseStudies />
         <Products />
+        <Leadership />
         <Story />
         <Skills />
         <Contact />
