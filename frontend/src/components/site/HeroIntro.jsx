@@ -40,7 +40,7 @@ export const HeroIntro = () => (
 
     <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
       <a
-        href="#experience"
+        href="#cases"
         data-sound="key"
         data-testid="hero-see-proof-btn"
         className="key key-orange inline-flex items-center gap-2 rounded-2xl px-5 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] sm:px-6 sm:py-4 sm:text-sm"

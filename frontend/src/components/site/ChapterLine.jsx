@@ -7,7 +7,7 @@ export const CARD_WINDOWS = [
   [0.62, 0.88],
 ];
 
-export const ChapterLine = ({ p, i, beat, mobile }) => {
+export const ChapterLine = ({ p, i, beat, mobile, onOpenExperience }) => {
   const [s, e] = CARD_WINDOWS[i];
   const mid = (s + e) / 2;
   const isLeft = i % 2 === 0;
@@ -25,6 +25,8 @@ export const ChapterLine = ({ p, i, beat, mobile }) => {
     : isLeft
     ? "left-[5vw] top-1/2 -translate-y-1/2 text-left max-w-[36vw]"
     : "right-[5vw] top-1/2 -translate-y-1/2 text-left max-w-[36vw]";
+
+  const isCaseStudy = beat.target === "#cases";
 
   return (
     <div className={`absolute ${pos} z-10 pointer-events-none`}>
@@ -81,15 +83,26 @@ export const ChapterLine = ({ p, i, beat, mobile }) => {
           </p>
         </div>
 
-        {/* CTA Footer */}
+        {/* CTA Footer with Prominent Dark Pill Button */}
         <div className="mt-4 pt-3 border-t border-[#D5CFBF]/80 flex items-center justify-between">
-          <a
-            href={beat.target}
-            data-sound="tick"
-            className="inline-flex items-center gap-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#FF5A00] transition-colors hover:text-[#C83E00]"
-          >
-            See in detail <ArrowUpRight size={14} />
-          </a>
+          {isCaseStudy ? (
+            <a
+              href="#cases"
+              data-sound="tick"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#1C1917] px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-[#FAF8F5] shadow-md transition-all hover:bg-[#2C2825] hover:text-[#FF5A00] hover:shadow-lg active:scale-95"
+            >
+              See in detail <ArrowUpRight size={14} className="text-[#FF5A00]" />
+            </a>
+          ) : (
+            <button
+              type="button"
+              onClick={() => onOpenExperience?.(beat, isLeft ? "right" : "left")}
+              data-sound="key"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#1C1917] px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-[#FAF8F5] shadow-md transition-all hover:bg-[#2C2825] hover:text-[#FF5A00] hover:shadow-lg active:scale-95"
+            >
+              See in detail <ArrowUpRight size={14} className="text-[#FF5A00]" />
+            </button>
+          )}
           <span className="font-mono text-xs uppercase tracking-widest text-[#78716C] font-semibold">
             {beat.company}
           </span>

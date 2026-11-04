@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
-import { HERO_BEATS } from "@/data/content";
+import { EXPERIENCES, HERO_BEATS } from "@/data/content";
 import { Mac3D } from "@/components/mac/Mac3D";
 import { HeroIntro } from "./HeroIntro";
 import { ChapterLine } from "./ChapterLine";
+import { ExperienceDialog } from "./ExperienceDialog";
 import { useIsMobile } from "@/lib/useIsMobile";
 
 const MacScale = ({ children }) => (
@@ -17,56 +18,87 @@ const HERO_PRODUCT = {
   pixel: ["..####..", ".######.", "###..###", "###..###", ".######.", "..####..", "..####..", ".######."],
 };
 
-const StaticChapter = () => (
-  <section id="top" className="px-5 pb-20 pt-28 sm:px-8" data-testid="chapter-static">
-    <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
-      <HeroIntro />
-      <div className="flex justify-center">
-        <MacScale>
-          <Mac3D rotateY={-22} product={HERO_PRODUCT} />
-        </MacScale>
+const StaticChapter = () => {
+  const [selectedExp, setSelectedExp] = useState(null);
+
+  const handleOpenExperience = (beat, side) => {
+    const exp = EXPERIENCES.find(
+      (e) =>
+        e.company.toLowerCase().includes(beat.company.toLowerCase()) ||
+        beat.company.toLowerCase().includes(e.company.toLowerCase())
+    );
+    if (exp) {
+      setSelectedExp({ data: exp, side });
+    }
+  };
+
+  return (
+    <section id="top" className="px-5 pb-20 pt-28 sm:px-8" data-testid="chapter-static">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+        <HeroIntro />
+        <div className="flex justify-center">
+          <MacScale>
+            <Mac3D rotateY={-22} product={HERO_PRODUCT} />
+          </MacScale>
+        </div>
       </div>
-    </div>
-    <div className="mx-auto mt-16 max-w-7xl">
-      <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#78716C]">Proven Impact</p>
-      <div className="grid gap-4 sm:grid-cols-3">
-        {HERO_BEATS.map((beat) => (
-          <div
-            key={beat.company}
-            className="rounded-2xl border border-[#D5CFBF] bg-[#FAF8F5] p-5 shadow-sm text-[#1C1917]"
-          >
-            <div className="flex items-center justify-between text-xs font-mono text-[#78716C]">
-              <span className="font-bold text-[#1C1917]">{beat.company}</span>
-              <span className="rounded-full bg-[#1C1917] px-2 py-0.5 text-[10px] font-bold text-[#86efac]">
-                {beat.tag}
-              </span>
+      <div className="mx-auto mt-16 max-w-7xl">
+        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#78716C]">Proven Impact</p>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {HERO_BEATS.map((beat) => (
+            <div
+              key={beat.company}
+              className="rounded-2xl border border-[#D5CFBF] bg-[#FAF8F5] p-5 shadow-sm text-[#1C1917]"
+            >
+              <div className="flex items-center justify-between text-xs font-mono text-[#78716C]">
+                <span className="font-bold text-[#1C1917]">{beat.company}</span>
+                <span className="rounded-full bg-[#1C1917] px-2 py-0.5 text-[10px] font-bold text-[#86efac]">
+                  {beat.tag}
+                </span>
+              </div>
+              <div className="mt-3 font-display text-2xl font-black text-[#1C1917]">{beat.metric}</div>
+              <div className="mt-1 font-mono text-[11px] uppercase text-[#FF5A00]">{beat.metricLabel}</div>
+              <p className="mt-2 text-xs text-[#57534E]">{beat.metricContext}</p>
+              <div className="mt-3 pt-2 border-t border-[#D5CFBF]/80">
+                <span className="text-xs font-bold text-[#1C1917]">{beat.shipTitle}</span>
+                <p className="mt-0.5 text-xs text-[#57534E]">{beat.shipDetail}</p>
+              </div>
+              <div className="mt-4">
+                {beat.target === "#cases" ? (
+                  <a
+                    href="#cases"
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-[#1C1917] px-3.5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#FAF8F5]"
+                  >
+                    See in detail →
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => handleOpenExperience(beat, "right")}
+                    className="inline-flex items-center gap-1.5 rounded-xl bg-[#1C1917] px-3.5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#FAF8F5]"
+                  >
+                    See in detail →
+                  </button>
+                )}
+              </div>
             </div>
-            <div className="mt-3 font-display text-2xl font-black text-[#1C1917]">{beat.metric}</div>
-            <div className="mt-1 font-mono text-[11px] uppercase text-[#FF5A00]">{beat.metricLabel}</div>
-            <p className="mt-2 text-xs text-[#57534E]">{beat.metricContext}</p>
-            <div className="mt-3 pt-2 border-t border-[#D5CFBF]/80">
-              <span className="text-xs font-bold text-[#1C1917]">{beat.shipTitle}</span>
-              <p className="mt-0.5 text-xs text-[#57534E]">{beat.shipDetail}</p>
-            </div>
-            <div className="mt-4">
-              <a
-                href={beat.target}
-                className="font-mono text-xs font-bold text-[#FF5A00] hover:text-[#C83E00]"
-              >
-                See in detail →
-              </a>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+      <ExperienceDialog
+        experience={selectedExp?.data}
+        side={selectedExp?.side}
+        onClose={() => setSelectedExp(null)}
+      />
+    </section>
+  );
+};
 
 const PinnedChapter = () => {
   const ref = useRef(null);
   const mobile = useIsMobile();
   const { scrollYProgress: p } = useScroll({ target: ref, offset: ["start start", "end end"] });
+  const [selectedExp, setSelectedExp] = useState(null);
 
   // Complete 360-degree continuous rotation:
   // - Hero: -22deg
@@ -119,6 +151,17 @@ const PinnedChapter = () => {
     }
   });
 
+  const handleOpenExperience = (beat, side) => {
+    const exp = EXPERIENCES.find(
+      (e) =>
+        e.company.toLowerCase().includes(beat.company.toLowerCase()) ||
+        beat.company.toLowerCase().includes(e.company.toLowerCase())
+    );
+    if (exp) {
+      setSelectedExp({ data: exp, side });
+    }
+  };
+
   const currentProduct = activeBeat === null ? HERO_PRODUCT : HERO_BEATS[activeBeat];
   const displayIdx = activeBeat === null ? 1 : activeBeat + 1;
 
@@ -126,7 +169,14 @@ const PinnedChapter = () => {
     <section ref={ref} id="top" className="relative h-[340vh]" data-testid="chapter-section">
       <div className="sticky top-0 h-screen overflow-hidden">
         {HERO_BEATS.map((beat, i) => (
-          <ChapterLine key={beat.company} p={p} i={i} beat={beat} mobile={mobile} />
+          <ChapterLine
+            key={beat.company}
+            p={p}
+            i={i}
+            beat={beat}
+            mobile={mobile}
+            onOpenExperience={handleOpenExperience}
+          />
         ))}
 
         {/* Mac anchored in the center */}
@@ -172,6 +222,13 @@ const PinnedChapter = () => {
           </span>
         </motion.div>
       </div>
+
+      {/* Experience Deep Dive Pop-up */}
+      <ExperienceDialog
+        experience={selectedExp?.data}
+        side={selectedExp?.side}
+        onClose={() => setSelectedExp(null)}
+      />
     </section>
   );
 };

@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { Header } from "@/components/site/Header";
 import { Chapter } from "@/components/site/Chapter";
-import { Experience } from "@/components/site/Experience";
 import { CaseStudies } from "@/components/site/CaseStudies";
 import { Products } from "@/components/site/Products";
 import { Story } from "@/components/story/Story";
@@ -32,7 +31,6 @@ export default function Home() {
       <Header />
       <main>
         <Chapter />
-        <Experience />
         <CaseStudies />
         <Products />
         <Story />
