@@ -17,7 +17,7 @@ export const HERO_BEATS = [
     tag: "Voice AI",
     metric: "24s → 40s+",
     metricLabel: "Average Call Duration (+67%)",
-    metricContext: "Analyzed 500K+ enterprise calls in SQL to isolate drop-off triggers for Nivea India.",
+    metricContext: "Analyzed 500K+ enterprise calls in SQL to isolate absolute drop-off triggers for AI calls.",
     shipTitle: "Shipped Post-Call Analytics",
     shipDetail: "End-to-end module from solo PRD; cut client report generation from 2 hours to <5 mins.",
     target: "#experience",
@@ -71,11 +71,11 @@ export const EXPERIENCES = [
     context: "Voice AI Vertical · Reporting to Deputy Director of Product",
     bullets: [
       "Optimized hybrid classification pipeline processing 80K+ monthly production calls; cut recurring LLM costs by introducing deterministic rules.",
-      "Analyzed 500K+ enterprise voice interactions in SQL to isolate drop-off triggers; redesigned prompt architecture raising average call duration from 24s to 40s+ (+67%).",
+      "Analyzed 500K+ enterprise voice interactions in SQL to isolate absolute drop-off triggers for AI calls; redesigned prompt architecture raising average call duration from 24s to 40s+ (+67%).",
       "Cut engineering QA bandwidth load by 40% via a MECE scenario testing framework by building an autonomous simulation bot for bot-on-bot QA.",
       "Shipped analytics module from a solo-authored PRD, cutting client report generation time from 2 hours to <5 minutes.",
     ],
-    skills: ["SQL", "Voice AI", "PRD Authoring", "Bot-on-Bot Simulation", "Prompt Architecture", "Nivea India"],
+    skills: ["SQL", "Voice AI", "PRD Authoring", "Bot-on-Bot Simulation", "Prompt Architecture", "Enterprise AI"],
   },
   {
     company: "Gen AI Labs",

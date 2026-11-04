@@ -8,6 +8,7 @@ import { Products } from "@/components/site/Products";
 import { Story } from "@/components/story/Story";
 import { Skills } from "@/components/site/Skills";
 import { Contact } from "@/components/site/Contact";
+import { Arcade } from "@/components/site/Arcade";
 
 export default function Home() {
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function Home() {
         <Story />
         <Skills />
         <Contact />
+        <Arcade />
       </main>
     </div>
   );

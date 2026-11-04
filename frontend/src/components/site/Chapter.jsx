@@ -92,14 +92,12 @@ const PinnedChapter = () => {
 
   const y = useTransform(
     p,
-    [0, 0.10, 0.85, 0.90],
-    mobile ? ["24vh", "0vh", "0vh", "4vh"] : ["3vh", "0vh", "0vh", "0vh"]
+    [0, 0.10, 0.88, 1.0],
+    mobile ? ["24vh", "0vh", "0vh", "0vh"] : ["3vh", "0vh", "0vh", "0vh"]
   );
-  const scale = useTransform(p, [0.85, 0.90], [1, 0.92]);
-  const hintO = useTransform(p, [0.88, 0.92], [0, 1]);
+  const scale = useTransform(p, [0.88, 1.0], [1, 0.94]);
 
   const [activeBeat, setActiveBeat] = useState(null); // null = Hero
-  const [gameReady, setGameReady] = useState(false);
 
   const introO = useTransform(p, [0, 0.08], [1, 0]);
   const introY = useTransform(p, [0, 0.08], [0, -50]);
@@ -119,14 +117,13 @@ const PinnedChapter = () => {
     } else {
       setActiveBeat(2);
     }
-    setGameReady(v >= 0.88);
   });
 
   const currentProduct = activeBeat === null ? HERO_PRODUCT : HERO_BEATS[activeBeat];
   const displayIdx = activeBeat === null ? 1 : activeBeat + 1;
 
   return (
-    <section ref={ref} id="top" className="relative h-[380vh]" data-testid="chapter-section">
+    <section ref={ref} id="top" className="relative h-[340vh]" data-testid="chapter-section">
       <div className="sticky top-0 h-screen overflow-hidden">
         {HERO_BEATS.map((beat, i) => (
           <ChapterLine key={beat.company} p={p} i={i} beat={beat} mobile={mobile} />
@@ -140,7 +137,7 @@ const PinnedChapter = () => {
                 rotateY={rotateY}
                 hl={hl}
                 product={currentProduct}
-                gameReady={gameReady}
+                gameReady={false}
               />
             </MacScale>
           </motion.div>
@@ -155,27 +152,6 @@ const PinnedChapter = () => {
         >
           <motion.div style={{ opacity: introO, y: introY, pointerEvents: introPE }}>
             <HeroIntro />
-          </motion.div>
-        </div>
-
-        <div
-          className={`pointer-events-none absolute ${
-            mobile
-              ? "inset-x-5 top-24"
-              : "left-[5vw] top-1/2 max-w-[28vw] -translate-y-1/2"
-          }`}
-        >
-          <motion.div style={{ opacity: hintO }} data-testid="game-hint">
-            <p className="font-arcade text-[10px] uppercase leading-relaxed text-[#B84300]">Bonus level</p>
-            <p className="mt-3 font-display text-3xl font-black leading-[0.95] tracking-tight sm:text-5xl">
-              Play{" "}
-              <span className="italic text-[#FF5A00]" style={{ fontFamily: "Fraunces" }}>
-                Ship it.
-              </span>
-            </p>
-            <p className="mt-3 max-w-xs text-sm text-[#44403C] sm:text-base">
-              Press SHP, Space or tap the screen to jump over bugs. Keep scrolling to skip.
-            </p>
           </motion.div>
         </div>
 

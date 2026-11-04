@@ -21,55 +21,62 @@ export const ChapterLine = ({ p, i, beat, mobile }) => {
   const pointerEvents = useTransform(opacity, (v) => (v > 0.4 ? "auto" : "none"));
 
   const pos = mobile
-    ? "top-20 inset-x-4 text-left"
+    ? "top-16 inset-x-4 text-left"
     : isLeft
-    ? "left-[6vw] top-1/2 -translate-y-1/2 text-left max-w-[34vw]"
-    : "right-[6vw] top-1/2 -translate-y-1/2 text-left max-w-[34vw]";
+    ? "left-[5vw] top-1/2 -translate-y-1/2 text-left max-w-[36vw]"
+    : "right-[5vw] top-1/2 -translate-y-1/2 text-left max-w-[36vw]";
 
   return (
     <div className={`absolute ${pos} z-10 pointer-events-none`}>
       <motion.div
         style={{ y, opacity, filter, pointerEvents }}
         data-testid={`chapter-beat-${i}`}
-        className="rounded-2xl border border-[#D5CFBF] bg-[#FAF8F5]/95 p-5 shadow-[0_12px_32px_rgba(28,25,23,0.08)] backdrop-blur-md sm:p-6 text-[#1C1917]"
+        className="rounded-2xl border border-[#D5CFBF] bg-[#FAF8F5]/95 p-5 shadow-[0_16px_36px_rgba(28,25,23,0.09)] backdrop-blur-md sm:p-6 text-[#1C1917]"
       >
-        {/* Top Header Badge Row */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="font-mono text-xs font-bold text-[#FF5A00]">
-            {beat.no} / 03
-          </span>
-          <span className="text-[#A8A29E]">·</span>
-          <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#1C1917]">
-            {beat.company}
-          </span>
-          <span className="rounded-full bg-[#EAE5D9] px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[#57534E]">
-            {beat.role}
-          </span>
-          {/* High contrast dark retro badge for key distinction */}
-          <span className="rounded-full bg-[#1C1917] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-[#86efac] shadow-sm">
+        {/* Top Header Row: Stage, Role, Category */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D5CFBF]/80 pb-3">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs font-black text-[#FF5A00]">
+              STAGE {beat.no}
+            </span>
+            <span className="text-[#A8A29E] font-mono text-xs">/ 03</span>
+            <span className="rounded-full bg-[#EAE5D9] px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider text-[#44403C]">
+              {beat.role}
+            </span>
+          </div>
+
+          {/* High contrast dark retro category badge - prominent */}
+          <span className="rounded-full bg-[#1C1917] px-3.5 py-1 font-mono text-xs font-bold uppercase tracking-wider text-[#86efac] shadow-sm">
             {beat.tag}
           </span>
         </div>
 
+        {/* Company Title - Bold, Large, Authoritative */}
+        <div className="mt-3.5">
+          <h3 className="font-display text-2xl sm:text-3xl lg:text-[2rem] font-black tracking-tight text-[#1C1917] leading-none">
+            {beat.company}
+          </h3>
+        </div>
+
         {/* Block 1: The Core Metric */}
-        <div className="mt-3.5 rounded-xl border border-[#D5CFBF] bg-[#F2EFE8] p-3.5">
+        <div className="mt-3.5 rounded-xl border border-[#D5CFBF] bg-[#F2EFE8] p-3.5 sm:p-4">
           <div className="font-display text-3xl font-black tracking-tight text-[#1C1917] sm:text-4xl leading-none">
             {beat.metric}
           </div>
           <div className="mt-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#FF5A00]">
             {beat.metricLabel}
           </div>
-          <p className="mt-1.5 text-xs text-[#57534E] leading-relaxed">
+          <p className="mt-1.5 text-xs text-[#57534E] leading-relaxed sm:text-sm">
             {beat.metricContext}
           </p>
         </div>
 
-        {/* Block 2: Shipped System / Output (Clear Separate Hierarchy) */}
-        <div className="mt-3 rounded-xl border border-[#D5CFBF] bg-[#FAF8F5] p-3.5">
-          <div className="font-display text-sm font-bold text-[#1C1917]">
+        {/* Block 2: Shipped System / Output */}
+        <div className="mt-3 rounded-xl border border-[#D5CFBF] bg-[#FAF8F5] p-3.5 sm:p-4">
+          <div className="font-display text-sm font-bold text-[#1C1917] sm:text-base">
             {beat.shipTitle}
           </div>
-          <p className="mt-1 text-xs text-[#57534E] leading-relaxed">
+          <p className="mt-1 text-xs text-[#57534E] leading-relaxed sm:text-sm">
             {beat.shipDetail}
           </p>
         </div>
@@ -83,7 +90,7 @@ export const ChapterLine = ({ p, i, beat, mobile }) => {
           >
             See in detail <ArrowUpRight size={14} />
           </a>
-          <span className="font-mono text-[10px] uppercase tracking-widest text-[#78716C]">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#78716C] font-semibold">
             {beat.company}
           </span>
         </div>
