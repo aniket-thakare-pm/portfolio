@@ -63,7 +63,11 @@ export const CaseStudies = () => {
                 <div className="mt-6 border-t border-[#2B2824] pt-4">
                   <div className="flex items-baseline justify-between">
                     <p className="font-display text-4xl font-black text-[#FF7A2E]">{c.result}</p>
-                    {c.deckUrl ? (
+                    {c.deckUrl && c.prototypeUrl ? (
+                      <span className="inline-flex items-center gap-1 rounded border border-[#FF7A2E]/50 bg-[#29221C] px-2 py-0.5 font-mono text-[10px] text-[#FF7A2E]">
+                        <FileText size={10} /> Deck + UI
+                      </span>
+                    ) : c.deckUrl ? (
                       <span className="inline-flex items-center gap-1 rounded border border-[#FF7A2E]/40 bg-[#29221C] px-2 py-0.5 font-mono text-[10px] text-[#FF7A2E]">
                         <FileText size={10} /> Deck
                       </span>

@@ -104,6 +104,8 @@ export const CASE_STUDIES = [
     resultLabel: "Quarterly net incremental NMV (~₹58 Cr annualized) with zero cash burn",
     deckUrl: "/decks/Meesho_DICE_Executive_Deck.pdf",
     deckLabel: "View Pitch Deck (PDF)",
+    prototypeUrl: "https://aniket-thakare-pm.github.io/meesho-dice-prototypes/",
+    prototypeLabel: "Interactive Prototypes",
     problem: "While Beauty & Personal Care (BPC) represents ~32% of global creator commerce (TikTok Shop), it severely under-indexed on Meesho (content commerce was only 2.4% of NMV) due to high upfront product sampling costs and return fraud.",
     research: "Conducted 23 creator IDIs and 118 consumer surveys. Uncovered that micro-creators cannot afford ₹15k-₹20k inventory upfront, while sellers fear unboxing returns.",
     decisions: [
@@ -111,7 +113,7 @@ export const CASE_STUDIES = [
       "Implemented gamified tiered commissions (Silver → Gold → Platinum) tied to net delivered GMV rather than gross order clicks.",
       "Built return-fraud mitigation guardrails with pre-dispatch sealed-tag video verification, keeping pilot default exposure under ₹2.25 Lakh.",
     ],
-    launched: "13-page executive pitch deck, 7 technical appendix chapters, 11 high-fidelity interactive UI prototypes, and 6 standalone PRDs.",
+    launched: "24-page executive pitch deck, 7 technical appendix chapters, 11 high-fidelity interactive UI prototypes, and 6 standalone PRDs.",
     outcome: "Ongoing Semifinalist (Strategix IIT Kharagpur); model projects ₹14.57 Cr net incremental NMV/qtr and ₹30 Cr 12-month brand marketplace revenue.",
     metrics: [
       ["Incremental NMV", "₹14.57 Cr/qtr"],
@@ -154,7 +156,7 @@ export const CASE_STUDIES = [
     role: "Lead System Architect & Product PM",
     result: "+47%",
     resultLabel: "Projected fleet utilization uplift across 200M km/yr EV ops",
-    deckUrl: "/decks/LightMetrics_Systems_Deck.pdf",
+    deckUrl: "/decks/Supply_Macy_LightMetrics_Deck.pdf",
     deckLabel: "View Systems Deck (PDF)",
     problem: "Commercial enterprise fleets face prohibitively high Total Cost of Ownership (TCO) and severe charging bottlenecks when transitioning from internal combustion to electric vehicles.",
     research: "Modeled operational parameters across 20+ fleet KPIs, evaluating Time-of-Use (ToU) electricity tariffs, battery degradation curves, and multi-depot vehicle routing schedules.",

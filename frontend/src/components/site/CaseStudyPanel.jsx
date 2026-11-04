@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Lock, FileText } from "lucide-react";
+import { ArrowRight, ExternalLink, Lock, FileText, Sparkles } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { CASE_STUDIES } from "@/data/content";
 
@@ -24,25 +24,43 @@ export const CaseStudyPanel = ({ index, onClose, onNext }) => {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <p className="font-arcade text-[10px] text-[#FF7A2E]">CASE {c.no} / 0{CASE_STUDIES.length}</p>
 
-                {/* Deck or Confidentiality Pill in Header */}
-                {c.deckUrl ? (
-                  <a
-                    href={c.deckUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid={`case-deck-btn-${c.no}`}
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#FF5A00] px-3.5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-white shadow transition-all hover:bg-[#E04F00] hover:scale-105 active:scale-95"
-                  >
-                    <FileText size={13} />
-                    <span>{c.deckLabel || "View Deck (PDF)"}</span>
-                    <ExternalLink size={13} />
-                  </a>
-                ) : c.confidential ? (
-                  <div className="inline-flex items-center gap-1.5 rounded-lg border border-[#3E3A35] bg-[#24211D] px-3 py-1.5 font-mono text-xs text-[#A8A29E]">
-                    <Lock size={12} className="text-[#FF7A2E]" />
-                    <span>Confidential under NDA</span>
-                  </div>
-                ) : null}
+                {/* Deck, Prototype, or Confidentiality Pill in Header */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {c.deckUrl && (
+                    <a
+                      href={c.deckUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`case-deck-btn-${c.no}`}
+                      className="inline-flex items-center gap-1.5 rounded-lg bg-[#FF5A00] px-3.5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-white shadow transition-all hover:bg-[#E04F00] hover:scale-105 active:scale-95"
+                    >
+                      <FileText size={13} />
+                      <span>{c.deckLabel || "View Deck (PDF)"}</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+
+                  {c.prototypeUrl && (
+                    <a
+                      href={c.prototypeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`case-prototype-btn-${c.no}`}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-[#D5CFBF]/40 bg-[#F4F1EA] px-3.5 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-[#1C1917] shadow transition-all hover:bg-white hover:scale-105 active:scale-95"
+                    >
+                      <Sparkles size={13} className="text-[#FF5A00]" />
+                      <span>{c.prototypeLabel || "Interactive Prototypes"}</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+
+                  {c.confidential && (
+                    <div className="inline-flex items-center gap-1.5 rounded-lg border border-[#3E3A35] bg-[#24211D] px-3 py-1.5 font-mono text-xs text-[#A8A29E]">
+                      <Lock size={12} className="text-[#FF7A2E]" />
+                      <span>Confidential under NDA</span>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <DialogTitle className="mt-4 font-display text-4xl font-black tracking-tight sm:text-5xl">
@@ -88,19 +106,35 @@ export const CaseStudyPanel = ({ index, onClose, onNext }) => {
               <Part n="05" label="Outcome">{c.outcome}</Part>
               <Part n="06" label="What I'd do next">{c.next}</Part>
 
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-[#D5CFBF] pt-6">
-                {c.deckUrl && (
-                  <a
-                    href={c.deckUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-[#D5CFBF] bg-[#FDFBF7] px-5 py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-[#1C1917] shadow-sm hover:border-[#1C1917] transition-colors"
-                  >
-                    <FileText size={15} />
-                    <span>{c.deckLabel || "Open Presentation (PDF)"}</span>
-                    <ExternalLink size={14} />
-                  </a>
-                )}
+              <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-[#D5CFBF] pt-6">
+                <div className="flex flex-wrap items-center gap-3">
+                  {c.deckUrl && (
+                    <a
+                      href={c.deckUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-xl border border-[#D5CFBF] bg-[#FDFBF7] px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-[#1C1917] shadow-sm hover:border-[#1C1917] transition-colors"
+                    >
+                      <FileText size={14} />
+                      <span>{c.deckLabel || "Open Presentation (PDF)"}</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+
+                  {c.prototypeUrl && (
+                    <a
+                      href={c.prototypeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-xl border border-[#FF5A00] bg-[#FF5A00] px-4 py-3 font-mono text-xs font-bold uppercase tracking-wider text-white shadow hover:bg-[#E04F00] transition-colors"
+                    >
+                      <Sparkles size={14} />
+                      <span>{c.prototypeLabel || "Launch Prototypes"}</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  )}
+                </div>
+
                 <button
                   onClick={onNext}
                   data-sound="key"
