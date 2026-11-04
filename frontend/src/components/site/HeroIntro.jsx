@@ -4,7 +4,7 @@ import { OWNER } from "@/data/content";
 
 export const HeroIntro = () => (
   <div data-testid="hero-intro">
-    <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-[#57534E] sm:text-sm font-semibold">
+    <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-[#57534E] sm:text-sm font-semibold">
       Aniket Thakare · IIT Kharagpur &apos;27
     </p>
 
@@ -34,38 +34,39 @@ export const HeroIntro = () => (
       </span>
     </h1>
 
-    <p className="mt-5 max-w-lg text-base leading-relaxed text-[#44403C] sm:mt-7 sm:text-lg">
+    <p className="mt-4 max-w-lg text-sm sm:text-base leading-relaxed text-[#44403C]">
       Enterprise voice AI, agentic private equity workflows, and B2B SaaS. PM intern at LimeChat and Gen AI Labs.
     </p>
 
-    <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9 sm:gap-4">
+    {/* Compact, refined action links fitted closely beneath subtitle */}
+    <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:mt-5 sm:gap-3">
       <a
         href="#cases"
-        data-sound="key"
+        data-sound="tick"
         data-testid="hero-see-proof-btn"
-        className="key key-orange inline-flex items-center gap-2 rounded-2xl px-5 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] sm:px-6 sm:py-4 sm:text-sm"
+        className="key key-orange inline-flex items-center gap-1.5 rounded-xl px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1C1917] transition-all"
       >
-        View Work <ArrowDownRight size={16} />
+        View Work <ArrowDownRight size={14} />
       </a>
       <a
         href={OWNER.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        data-sound="key"
+        data-sound="tick"
         data-testid="hero-linkedin-btn"
-        className="key inline-flex items-center gap-2 rounded-2xl px-4 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] sm:px-5 sm:py-4 sm:text-sm text-[#1C1917]"
+        className="key inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1C1917] transition-all"
       >
-        <Linkedin size={16} /> LinkedIn <ArrowUpRight size={14} className="opacity-50" />
+        <Linkedin size={14} /> LinkedIn <ArrowUpRight size={12} className="opacity-50" />
       </a>
       <a
         href={OWNER.github}
         target="_blank"
         rel="noopener noreferrer"
-        data-sound="key"
+        data-sound="tick"
         data-testid="hero-github-btn"
-        className="key inline-flex items-center gap-2 rounded-2xl px-4 py-3.5 font-mono text-xs font-semibold uppercase tracking-[0.15em] sm:px-5 sm:py-4 sm:text-sm text-[#1C1917]"
+        className="key inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1C1917] transition-all"
       >
-        <Github size={16} /> GitHub <ArrowUpRight size={14} className="opacity-50" />
+        <Github size={14} /> GitHub <ArrowUpRight size={12} className="opacity-50" />
       </a>
     </div>
   </div>

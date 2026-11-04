@@ -21,7 +21,8 @@ const HERO_PRODUCT = {
 };
 
 export const scrollToExperience = () => {
-  playSound("key");
+  // Soft, pleasant retro two-tone chime (non-alarming, gentle)
+  playSound("chime");
   const topEl = document.getElementById("top");
   if (topEl) {
     const rect = topEl.getBoundingClientRect();
@@ -30,7 +31,10 @@ export const scrollToExperience = () => {
     const totalScroll = topEl.offsetHeight - window.innerHeight;
     const targetY = sectionTop + totalScroll * 0.22;
     if (window.__lenis) {
-      window.__lenis.scrollTo(targetY, { duration: 1.2 });
+      window.__lenis.scrollTo(targetY, {
+        duration: 2.2,
+        easing: (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2),
+      });
     } else {
       window.scrollTo({ top: targetY, behavior: "smooth" });
     }
@@ -64,19 +68,19 @@ const StaticChapter = () => {
       </div>
 
       {/* Centered Scroll Prompt */}
-      <div className="mx-auto mt-12 text-center">
-        <a
-          href="#experience"
-          data-sound="tick"
-          className="group inline-flex flex-col items-center gap-2"
+      <div className="mx-auto mt-14 text-center">
+        <button
+          type="button"
+          onClick={scrollToExperience}
+          className="group inline-flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-105 active:scale-95"
         >
-          <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#57534E] group-hover:text-[#1C1917] transition-colors">
+          <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-[#57534E] group-hover:text-[#1C1917] transition-colors">
             Don&apos;t take my word for it. Take the numbers.
           </span>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D5CFBF] bg-[#FAF8F5] text-[#FF5A00] shadow-sm transition-all group-hover:border-[#FF5A00] group-hover:bg-white group-hover:shadow-md">
-            <ArrowDown size={18} className="animate-bounce" />
+          <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D5CFBF] bg-[#FAF8F5] shadow-sm transition-all group-hover:border-[#FF5A00] group-hover:bg-white group-hover:shadow-md">
+            <ArrowDown size={18} className="text-[#FF5A00] block" />
           </span>
-        </a>
+        </button>
       </div>
 
       <div className="mx-auto mt-16 max-w-7xl">
@@ -247,21 +251,24 @@ const PinnedChapter = () => {
         </div>
 
         {/* Centered Scroll Indicator Bar (Visible only during Hero, disappears on scroll) */}
-        <div className="pointer-events-none absolute bottom-8 sm:bottom-10 inset-x-0 mx-auto flex flex-col items-center justify-center text-center z-20 px-4">
+        <div className="pointer-events-none absolute bottom-5 sm:bottom-7 md:bottom-8 lg:bottom-10 inset-x-0 mx-auto flex flex-col items-center justify-center text-center z-20 px-4">
           <motion.div style={{ opacity: introO, y: introY, pointerEvents: introPE }}>
             <button
               type="button"
               onClick={scrollToExperience}
-              data-sound="tick"
               className="group pointer-events-auto flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-105 active:scale-95"
               title="Jump to Experience"
             >
-              <span className="font-mono text-xs sm:text-sm font-bold uppercase tracking-[0.18em] text-[#57534E] group-hover:text-[#1C1917] transition-colors">
+              <span className="font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-[#57534E] group-hover:text-[#1C1917] transition-colors">
                 Don&apos;t take my word for it. Take the numbers.
               </span>
-              <span className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-[#D5CFBF] bg-[#FAF8F5] text-[#FF5A00] shadow-sm transition-all group-hover:border-[#FF5A00] group-hover:bg-white group-hover:shadow-md">
-                <ArrowDown size={18} className="animate-bounce text-[#FF5A00]" />
-              </span>
+              <motion.span
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D5CFBF] bg-[#FAF8F5] shadow-sm transition-all group-hover:border-[#FF5A00] group-hover:bg-white group-hover:shadow-md"
+              >
+                <ArrowDown size={18} className="text-[#FF5A00] block" />
+              </motion.span>
             </button>
           </motion.div>
         </div>
