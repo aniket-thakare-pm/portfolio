@@ -6,7 +6,47 @@ export const OWNER = {
   location: "IIT Kharagpur, India",
   linkedin: "https://www.linkedin.com/in/aniket-a-thakare/",
   github: "https://github.com/aniket-thakare-pm",
+  resume: "/Aniket_Thakare_Resume.pdf",
 };
+
+export const HERO_BEATS = [
+  {
+    no: "01",
+    company: "LimeChat",
+    role: "PM Intern",
+    tag: "Voice AI",
+    metric: "24s → 40s+",
+    metricLabel: "average call duration (+67%)",
+    highlight: "Optimized hybrid classification for 80K+ monthly production calls across Nivea India.",
+    target: "#experience",
+    screenName: "LIMECHAT",
+    pixel: ["..####..", ".######.", "###..###", "###..###", ".######.", "..####..", "..####..", ".######."],
+  },
+  {
+    no: "02",
+    company: "Gen AI Labs",
+    role: "PM Intern",
+    tag: "Agentic AI",
+    metric: "$36K ARR",
+    metricLabel: "enterprise client closed",
+    highlight: "Private equity CIM diligence & memo generation; steered 6-member cross-functional roadmap.",
+    target: "#experience",
+    screenName: "GEN AI LABS",
+    pixel: ["########", "#.#..#.#", "#.####.#", "##....##", "##....##", "#.####.#", "#.#..#.#", "########"],
+  },
+  {
+    no: "03",
+    company: "Meesho DICE",
+    role: "Case Study",
+    tag: "Creator Growth",
+    metric: "₹14.57 Cr",
+    metricLabel: "quarterly net incremental NMV (~₹58 Cr/yr)",
+    highlight: "Reverse-escrow creator sampling wallet & pre-dispatch video verification fraud guardrails.",
+    target: "#cases",
+    screenName: "MEESHO DICE",
+    pixel: ["...##...", ".######.", "##.##.##", "########", "###..###", ".######.", "..####..", "...##..."],
+  },
+];
 
 export const NAV = [
   { id: "experience", label: "Experience" },

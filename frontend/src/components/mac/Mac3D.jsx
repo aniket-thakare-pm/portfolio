@@ -57,7 +57,7 @@ export const Mac3D = ({ rotateY = -24, rotateX = -9, hl = 40, product = PRODUCTS
 
   const on = power && phase !== "off";
   const idle = gameReady && !playing;
-  const text = phase === "hello" ? "HELLO" : idle ? "PRESS SHP TO PLAY" : msg || product?.name || "";
+  const text = phase === "hello" ? "HELLO" : idle ? "PRESS SHP TO PLAY" : msg || product?.screenName || product?.company || product?.name || "";
   const pixel = phase === "hello" || idle || msg ? null : product?.pixel;
 
   return (
