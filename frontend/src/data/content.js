@@ -96,6 +96,30 @@ export const EXPERIENCES = [
 export const CASE_STUDIES = [
   {
     no: "01",
+    tag: "Creator Commerce · National Semifinalist",
+    title: "Meesho DICE",
+    subtitle: "Scaling Beauty & Personal Care in Content Commerce",
+    role: "Lead Product Strategist & Quantitative Modeler (Strategix IIT KGP)",
+    result: "₹14.57 Cr",
+    resultLabel: "Quarterly net incremental NMV (~₹58 Cr annualized) with zero cash burn",
+    problem: "While Beauty & Personal Care (BPC) represents ~32% of global creator commerce (TikTok Shop), it severely under-indexed on Meesho (content commerce was only 2.4% of NMV) due to high upfront product sampling costs and return fraud.",
+    research: "Conducted 23 creator IDIs and 118 consumer surveys. Uncovered that micro-creators cannot afford ₹15k-₹20k inventory upfront, while sellers fear unboxing returns.",
+    decisions: [
+      "Created a reverse-escrow Creator Sampling Wallet funded by verified brand partners, eliminating creator capital requirements.",
+      "Implemented gamified tiered commissions (Silver → Gold → Platinum) tied to net delivered GMV rather than gross order clicks.",
+      "Built return-fraud mitigation guardrails with pre-dispatch sealed-tag video verification, keeping pilot default exposure under ₹2.25 Lakh.",
+    ],
+    launched: "13-page executive pitch deck, 7 technical appendix chapters, 11 high-fidelity interactive UI prototypes, and 6 standalone PRDs.",
+    outcome: "Ongoing Semifinalist (Strategix IIT Kharagpur); model projects ₹14.57 Cr net incremental NMV/qtr and ₹30 Cr 12-month brand marketplace revenue.",
+    metrics: [
+      ["Incremental NMV", "₹14.57 Cr/qtr"],
+      ["Annualized NMV", "~₹58 Cr"],
+      ["Interviews & Surveys", "141+"],
+    ],
+    next: "Deploy live affiliate conversion tracking with dynamic localized vernacular voiceovers for Tier-2/Tier-3 regional creator audiences.",
+  },
+  {
+    no: "02",
     tag: "InterIIT Tech Meet 14.0 · National Gold Medal",
     title: "Adobe Photoshop 2030",
     subtitle: "Generative Mobile Creative Engine",
@@ -119,7 +143,7 @@ export const CASE_STUDIES = [
     next: "Explore tokenized on-device micro-inference caching to optimize battery consumption on mobile devices during complex multi-layer generative inpainting.",
   },
   {
-    no: "02",
+    no: "03",
     tag: "Supply Chain & Logistics · 1st Place Gold",
     title: "LightMetrics",
     subtitle: "EV Fleet Conversion & V2G Optimization",
@@ -141,30 +165,6 @@ export const CASE_STUDIES = [
       ["Fleet Utilization", "+47%"],
     ],
     next: "Incorporate real-time ambient temperature and highway grade topology data to dynamically adjust per-route energy consumption models.",
-  },
-  {
-    no: "03",
-    tag: "Creator Commerce · National Semifinalist",
-    title: "Meesho DICE",
-    subtitle: "Scaling Beauty & Personal Care in Content Commerce",
-    role: "Lead Product Strategist & Quantitative Modeler (Strategix IIT KGP)",
-    result: "₹14.57 Cr",
-    resultLabel: "Quarterly net incremental NMV (~₹58 Cr annualized) with zero cash burn",
-    problem: "While Beauty & Personal Care (BPC) represents ~32% of global creator commerce (TikTok Shop), it severely under-indexed on Meesho (content commerce was only 2.4% of NMV) due to high upfront product sampling costs and return fraud.",
-    research: "Conducted 23 creator IDIs and 118 consumer surveys. Uncovered that micro-creators cannot afford ₹15k-₹20k inventory upfront, while sellers fear unboxing returns.",
-    decisions: [
-      "Created a reverse-escrow Creator Sampling Wallet funded by verified brand partners, eliminating creator capital requirements.",
-      "Implemented gamified tiered commissions (Silver → Gold → Platinum) tied to net delivered GMV rather than gross order clicks.",
-      "Built return-fraud mitigation guardrails with pre-dispatch sealed-tag video verification, keeping pilot default exposure under ₹2.25 Lakh.",
-    ],
-    launched: "13-page executive pitch deck, 7 technical appendix chapters, 11 high-fidelity interactive UI prototypes, and 6 standalone PRDs.",
-    outcome: "Ongoing Semifinalist (Strategix IIT Kharagpur); model projects ₹14.57 Cr net incremental NMV/qtr and ₹30 Cr 12-month brand marketplace revenue.",
-    metrics: [
-      ["Incremental NMV", "₹14.57 Cr/qtr"],
-      ["Annualized NMV", "~₹58 Cr"],
-      ["Interviews & Surveys", "141+"],
-    ],
-    next: "Deploy live affiliate conversion tracking with dynamic localized vernacular voiceovers for Tier-2/Tier-3 regional creator audiences.",
   },
 ];
 
