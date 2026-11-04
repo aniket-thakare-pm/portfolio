@@ -238,55 +238,39 @@ export const PRODUCTS = [
 
 export const SKILL_PILLARS = [
   {
-    category: "Product Management",
+    category: "Product Craft",
     skills: [
       "User Discovery & IDIs",
       "PRD & Spec Authoring",
       "RICE Prioritization",
-      "Roadmapping & OKRs",
-      "Opportunity Solution Trees",
-      "Agile Sprint Delivery",
       "Go-To-Market (GTM)",
-      "Competitive Benchmarking",
     ],
   },
   {
-    category: "Data & Quantitative Analytics",
+    category: "Data & Analytics",
     skills: [
       "SQL (Querying & Joins)",
       "Python (Pandas & NumPy)",
       "A/B Testing & Stats",
-      "Funnel & Cohort Analysis",
-      "Econometric Logit Modeling",
-      "Tableau & Metabase",
-      "KPI & Guardrail Tracking",
-      "Unit Economics & Margins",
+      "Logit Econometrics",
     ],
   },
   {
-    category: "AI, LLMs & Systems",
+    category: "AI & Systems",
     skills: [
       "Prompt Architecture",
+      "LLM Evals & Benchmarks",
       "Bot-on-Bot Simulation QA",
-      "LLM Evaluation Benchmarks",
       "Agentic Workflows",
-      "Human-in-the-Loop (HITL)",
-      "API & System Architecture",
-      "Decoupled Classification",
-      "Prompt Self-Learning Loops",
     ],
   },
   {
-    category: "Prototyping, Code & Design",
+    category: "Code & Prototyping",
     skills: [
       "Figma Design Systems",
-      "Interactive Wireframing",
-      "React & Next.js",
+      "React / Next.js",
       "Kotlin & Jetpack Compose",
       "Room SQLite (Local-First)",
-      "FastAPI & REST APIs",
-      "DaVinci Resolve & Premiere",
-      "High-Fidelity Prototyping",
     ],
   },
 ];
