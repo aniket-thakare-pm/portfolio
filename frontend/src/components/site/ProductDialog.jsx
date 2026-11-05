@@ -22,8 +22,10 @@ export const ProductDialog = ({ product: p, onClose }) => (
             <div className="scanlines absolute inset-0 opacity-20" />
             
             {/* Visual Graphic in Background */}
-            <div className="absolute inset-0 flex items-center justify-center p-4 opacity-35">
-              <ProductGraphic type={p.graphicType} className="h-full w-full text-white" />
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-6 opacity-35">
+              <div className="flex h-full w-full items-center justify-center max-h-[82px] sm:max-h-[92px]">
+                <ProductGraphic type={p.graphicType} className="h-full w-auto max-w-[140px] text-white" />
+              </div>
             </div>
 
             <div className="relative z-10 flex h-full flex-col justify-between">

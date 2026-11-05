@@ -30,9 +30,11 @@ const Card = ({ p, bannerHeight = "h-48", onOpen }) => (
         <div className="grille absolute inset-0 opacity-25 mix-blend-multiply" />
         <div className="scanlines absolute inset-0 opacity-20" />
 
-        {/* Custom Retro Vector Graphic */}
-        <div className="absolute inset-0 flex items-center justify-center p-3 opacity-90 transition-transform duration-500 group-hover:scale-105">
-          <ProductGraphic type={p.graphicType} className="h-full w-full text-white/90" />
+        {/* Custom Retro Vector Graphic (scaled to sit cleanly between top & bottom badges) */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6 py-6 opacity-90 transition-transform duration-500 group-hover:scale-105">
+          <div className="flex h-full w-full items-center justify-center max-h-[66px] sm:max-h-[72px]">
+            <ProductGraphic type={p.graphicType} className="h-full w-auto max-w-[128px] text-white/90" />
+          </div>
         </div>
 
         {/* Number badge (Top Left) */}
