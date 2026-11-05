@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDownRight, ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { OWNER } from "@/data/content";
+import { scrollToContact } from "./actions";
 
 export const HeroIntro = () => (
   <div data-testid="hero-intro">
@@ -42,6 +43,7 @@ export const HeroIntro = () => (
     <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:mt-5 sm:gap-3">
       <a
         href="#contact"
+        onClick={scrollToContact}
         data-sound="tick"
         data-testid="hero-contact-btn"
         className="key key-orange inline-flex items-center gap-1.5 rounded-xl px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1C1917] transition-all"

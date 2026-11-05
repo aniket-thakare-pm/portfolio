@@ -119,7 +119,7 @@ export const Arcade = () => {
   return (
     <section
       id="arcade"
-      className="relative w-full border-t border-[#262320] bg-[#0E0D0C] text-[#F4F1EA]"
+      className="relative w-full border-t border-[#262320] bg-[#0E0D0C] text-[#F4F1EA] pb-16"
       data-testid="arcade-section"
     >
       <div ref={triggerRef} />

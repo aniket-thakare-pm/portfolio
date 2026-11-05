@@ -3,6 +3,7 @@ import { FileText, Github, Linkedin, Menu, X } from "lucide-react";
 import { NAV, OWNER } from "@/data/content";
 import { Logo } from "./Logo";
 import { SoundSwitch } from "./SoundSwitch";
+import { scrollToContact } from "./actions";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
@@ -20,6 +21,7 @@ export const Header = () => {
             <a
               key={n.id}
               href={`#${n.id}`}
+              onClick={n.id === "contact" ? scrollToContact : undefined}
               data-sound="tick"
               data-testid={`nav-${n.id}`}
               className="rounded-full px-4 py-2 font-mono text-[12px] uppercase tracking-[0.18em] transition-colors hover:bg-[#EAE5D9]"
@@ -79,7 +81,10 @@ export const Header = () => {
             <a
               key={n.id}
               href={`#${n.id}`}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                setOpen(false);
+                if (n.id === "contact") scrollToContact(e);
+              }}
               data-sound="key"
               data-testid={`mobile-nav-${n.id}`}
               className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em]"
