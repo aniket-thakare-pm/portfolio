@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FileText, Github, Linkedin, Menu, X } from "lucide-react";
+import { Github, Linkedin, Menu, X } from "lucide-react";
 import { NAV, OWNER } from "@/data/content";
 import { Logo } from "./Logo";
 import { SoundSwitch } from "./SoundSwitch";
@@ -7,7 +7,6 @@ import { scrollToContact } from "./actions";
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
-  const resumeUrl = OWNER.resume || "/Aniket_Thakare_Resume.pdf";
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-6 sm:pt-4" data-testid="site-header">
@@ -31,16 +30,6 @@ export const Header = () => {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-sound="tick"
-            data-testid="header-resume-btn"
-            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-[#D5CFBF] bg-[#FAF8F5] px-3.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-[#1C1917] transition-all hover:border-[#FF5A00] hover:text-[#FF5A00] hover:shadow-sm"
-          >
-            <FileText size={13} className="text-[#FF5A00]" /> Resume
-          </a>
           <a
             href={OWNER.linkedin}
             target="_blank"
@@ -93,15 +82,6 @@ export const Header = () => {
             </a>
           ))}
           <a
-            href={resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-sound="key"
-            className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2 text-[#FF5A00] font-bold"
-          >
-            <FileText size={14} /> Resume
-          </a>
-          <a
             href={OWNER.linkedin}
             target="_blank"
             rel="noopener noreferrer"
@@ -115,7 +95,7 @@ export const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-sound="key"
-            className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2 col-span-2"
+            className="key rounded-xl px-4 py-3 font-mono text-xs uppercase tracking-[0.18em] flex items-center justify-center gap-2"
           >
             <Github size={14} /> GitHub
           </a>

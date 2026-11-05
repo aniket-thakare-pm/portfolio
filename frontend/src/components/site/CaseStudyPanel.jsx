@@ -39,64 +39,74 @@ export const CaseStudyPanel = ({ index, onClose, onNext }) => {
               <div className="mt-8 grid grid-cols-1 md:grid-cols-[1.45fr_1fr] gap-4 items-stretch">
                 {/* 60% Preview Container */}
                 {c.deckUrl ? (
-                  <div className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-[#3E3A35] bg-[#141210] p-5 sm:p-6 shadow-inner transition-all hover:border-[#FF5A00]/80">
+                  <div className="relative flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-[#3E3A35] bg-[#141210] p-3 sm:p-4 shadow-inner transition-all hover:border-[#FF5A00]/80">
                     {/* Top status bar */}
-                    <div className="flex items-center justify-between border-b border-[#2B2824] pb-3">
+                    <div className="flex items-center justify-between pb-2.5 px-1 border-b border-[#2B2824]">
                       <div className="flex items-center gap-2">
                         <span className="flex h-2 w-2 rounded-full bg-[#FF7A2E] animate-pulse" />
                         <span className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#A8A29E]">
-                          Executive Pitch Deck
+                          Slide Archive · {c.tag}
                         </span>
                       </div>
                       <span className="rounded bg-[#24211D] px-2 py-0.5 font-mono text-[10px] font-semibold text-[#86efac]">
-                        {c.no === "01" ? "24-PAGE DECK · PDF" : "12-PAGE DECK · PDF"}
+                        {c.slidePages ? `${c.slidePages}-PAGE DECK · PDF` : "PITCH DECK · PDF"}
                       </span>
                     </div>
 
-                    {/* Preview Body / Card Canvas */}
-                    <div className="my-5 flex flex-col justify-center">
-                      <div className="rounded-xl border border-[#2B2824] bg-[#1C1A18]/80 p-4 relative overflow-hidden">
-                        {/* Subtle scanline effect */}
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-[#FF5A00]/5 to-transparent opacity-40" />
-                        <p className="font-mono text-[10px] uppercase tracking-widest text-[#FF7A2E]">
-                          SLIDE ARCHIVE · {c.tag}
-                        </p>
-                        <h4 className="mt-1 font-display text-lg sm:text-xl font-black text-[#F4F1EA]">
-                          {c.title}
-                        </h4>
-                        <p className="mt-1 text-xs text-[#A8A29E] line-clamp-2">
-                          {c.subtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Actions Row */}
-                    <div className="flex flex-wrap items-center gap-2.5 pt-2">
-                      <a
-                        href={c.deckUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid={`case-deck-preview-btn-${c.no}`}
-                        className="inline-flex items-center gap-2 rounded-xl bg-[#FF5A00] px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-white shadow transition-all hover:bg-[#E04F00] hover:scale-[1.02] active:scale-95"
-                      >
-                        <FileText size={14} />
-                        <span>{c.deckLabel || "Open Executive Pitch Deck"}</span>
-                        <ExternalLink size={13} />
-                      </a>
-
-                      {c.prototypeUrl && (
-                        <a
-                          href={c.prototypeUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          data-testid={`case-prototype-preview-btn-${c.no}`}
-                          className="inline-flex items-center gap-1.5 rounded-xl border border-[#D5CFBF]/30 bg-[#29221C] px-3.5 py-2 font-mono text-xs font-bold uppercase tracking-wider text-[#F4F1EA] shadow transition-all hover:bg-[#3E3A35] hover:scale-[1.02] active:scale-95"
-                        >
-                          <Sparkles size={13} className="text-[#FF7A2E]" />
-                          <span>Prototypes</span>
-                          <ExternalLink size={12} />
-                        </a>
+                    {/* 16:9 Slide 1 Cover Container - Entire rectangle clickable to open deck */}
+                    <a
+                      href={c.deckUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Click to view full slide deck in new tab"
+                      className="group relative my-2 aspect-video w-full overflow-hidden rounded-xl border border-[#2B2824] bg-black block cursor-pointer"
+                    >
+                      {c.slidePreview ? (
+                        <img
+                          src={c.slidePreview}
+                          alt={`${c.title} Cover Slide`}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center font-mono text-xs text-[#A8A29E]">
+                          Preview Loading...
+                        </div>
                       )}
+
+                      {/* Top-left slide indicator pill */}
+                      <div className="absolute top-2.5 left-2.5 inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-black/75 px-2.5 py-1 font-mono text-[10px] font-semibold text-[#86efac] backdrop-blur-md">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#86efac] animate-pulse" />
+                        <span>SLIDE 01 / {c.slidePages || 24}</span>
+                      </div>
+
+                      {/* Top-right click-to-expand badge */}
+                      <div className="absolute top-2.5 right-2.5 inline-flex items-center gap-1.5 rounded-md border border-white/10 bg-black/75 px-2.5 py-1 font-mono text-[10px] text-[#D6D3D1] backdrop-blur-md opacity-85 transition-opacity group-hover:opacity-100 group-hover:text-white">
+                        <span>Open Deck</span>
+                        <ExternalLink size={11} />
+                      </div>
+
+                      {/* Bottom-right Floating Prototype Pill Button */}
+                      {c.prototypeUrl && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            window.open(c.prototypeUrl, "_blank", "noopener,noreferrer");
+                          }}
+                          data-testid={`case-prototype-preview-btn-${c.no}`}
+                          className="absolute bottom-2.5 right-2.5 z-10 inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-black/85 px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-white shadow-xl backdrop-blur-md transition-all hover:bg-[#FF5A00] hover:border-[#FF5A00] hover:scale-105 active:scale-95"
+                        >
+                          <Sparkles size={12} className="text-[#FF7A2E]" />
+                          <span>Prototypes</span>
+                          <ExternalLink size={11} />
+                        </button>
+                      )}
+                    </a>
+
+                    {/* Bottom Quick Bar */}
+                    <div className="flex items-center justify-between pt-1 px-1 text-[11px] font-mono text-[#A8A29E]">
+                      <span className="text-[11px]">Click slide preview to open full presentation (PDF) ↗</span>
                     </div>
                   </div>
                 ) : (

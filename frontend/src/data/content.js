@@ -6,7 +6,7 @@ export const OWNER = {
   location: "IIT Kharagpur, India",
   linkedin: "https://www.linkedin.com/in/aniket-a-thakare/",
   github: "https://github.com/aniket-thakare-pm",
-  resume: "/Aniket_Thakare_Resume.pdf",
+  resume: "",
 };
 
 export const HERO_BEATS = [
@@ -28,7 +28,7 @@ export const HERO_BEATS = [
   {
     no: "02",
     company: "Gen AI Labs",
-    logo: "/logos/agentic.png",
+    logo: "/logos/agentic.svg",
     role: "PM Intern",
     tag: "Agentic AI",
     metric: "$36K ARR",
@@ -82,7 +82,7 @@ export const EXPERIENCES = [
   },
   {
     company: "Gen AI Labs",
-    logo: "/logos/agentic.png",
+    logo: "/logos/agentic.svg",
     role: "Product Management Intern",
     period: "May 2025 – Jul 2025",
     location: "USA (Remote)",
@@ -109,6 +109,8 @@ export const CASE_STUDIES = [
     resultLabel: "Quarterly net incremental NMV (~₹58 Cr annualized) with zero cash burn",
     deckUrl: "/decks/Meesho_DICE_Executive_Deck.pdf",
     deckLabel: "View Pitch Deck (PDF)",
+    slidePreview: "/decks/previews/meesho_slide_1.png",
+    slidePages: 24,
     prototypeUrl: "https://aniket-thakare-pm.github.io/meesho-dice-prototypes/",
     prototypeLabel: "Interactive Prototypes",
     problem: "While Beauty & Personal Care (BPC) represents ~32% of global creator commerce (TikTok Shop), it severely under-indexed on Meesho (content commerce was only 2.4% of NMV) due to high upfront product sampling costs and return fraud.",
@@ -163,6 +165,8 @@ export const CASE_STUDIES = [
     resultLabel: "Projected fleet utilization uplift across 200M km/yr EV ops",
     deckUrl: "/decks/Supply_Macy_LightMetrics_Deck.pdf",
     deckLabel: "View Systems Deck (PDF)",
+    slidePreview: "/decks/previews/lightmetrics_slide_1.png",
+    slidePages: 21,
     problem: "Commercial enterprise fleets face prohibitively high Total Cost of Ownership (TCO) and severe charging bottlenecks when transitioning from internal combustion to electric vehicles.",
     research: "Modeled operational parameters across 20+ fleet KPIs, evaluating Time-of-Use (ToU) electricity tariffs, battery degradation curves, and multi-depot vehicle routing schedules.",
     decisions: [
