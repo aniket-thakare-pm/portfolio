@@ -53,11 +53,20 @@ export const ChapterLine = ({ p, i, beat, mobile, onOpenExperience }) => {
           </span>
         </div>
 
-        {/* Company Title - Bold, Large, Authoritative */}
-        <div className="mt-3.5">
+        {/* Company Title & Official Brand Logo */}
+        <div className="mt-3.5 flex items-center justify-between gap-3">
           <h3 className="font-display text-2xl sm:text-3xl lg:text-[2rem] font-black tracking-tight text-[#1C1917] leading-none">
             {beat.company}
           </h3>
+          {beat.logo && (
+            <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-[#D5CFBF] bg-white p-1.5 shadow-sm">
+              <img
+                src={beat.logo}
+                alt={`${beat.company} Logo`}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          )}
         </div>
 
         {/* Block 1: The Core Metric */}

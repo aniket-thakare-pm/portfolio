@@ -210,17 +210,28 @@ export const ExperienceDialog = ({ experience, side = "right", onClose }) => {
             </button>
           </div>
 
-          {/* Company & Role Header */}
-          <div className="mt-3.5">
-            <h2 className="font-display text-2xl sm:text-3xl font-black tracking-tight text-[#1C1917]">
-              {activeExp.company}
-            </h2>
-            <p className="mt-1 font-mono text-xs font-bold uppercase tracking-wider text-[#FF5A00]">
-              {activeExp.role}
-            </p>
-            <p className="mt-0.5 text-xs text-[#57534E]">
-              {activeExp.context}
-            </p>
+          {/* Company & Role Header with Brand Logo */}
+          <div className="mt-3.5 flex items-start justify-between gap-3">
+            <div>
+              <h2 className="font-display text-2xl sm:text-3xl font-black tracking-tight text-[#1C1917]">
+                {activeExp.company}
+              </h2>
+              <p className="mt-1 font-mono text-xs font-bold uppercase tracking-wider text-[#FF5A00]">
+                {activeExp.role}
+              </p>
+              <p className="mt-0.5 text-xs text-[#57534E]">
+                {activeExp.context}
+              </p>
+            </div>
+            {activeExp.logo && (
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#D5CFBF] bg-white p-2 shadow-sm">
+                <img
+                  src={activeExp.logo}
+                  alt={activeExp.company}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+            )}
           </div>
 
           {/* Key Deliverables & Impact Log */}

@@ -13,6 +13,7 @@ export const HERO_BEATS = [
   {
     no: "01",
     company: "LimeChat",
+    logo: "/logos/limechat.png",
     role: "PM Intern",
     tag: "Voice AI",
     metric: "24s → 40s+",
@@ -27,6 +28,7 @@ export const HERO_BEATS = [
   {
     no: "02",
     company: "Gen AI Labs",
+    logo: "/logos/agentic.png",
     role: "PM Intern",
     tag: "Agentic AI",
     metric: "$36K ARR",
@@ -35,12 +37,13 @@ export const HERO_BEATS = [
     shipTitle: "Automated PE Deal Memos",
     shipDetail: "Reduced diligence review time by 30% with 98%+ LLM accuracy for private equity firms.",
     target: "#experience",
-    screenName: "GEN AI LABS",
+    screenName: "AGENTIC PM",
     pixel: ["########", "#.#..#.#", "#.####.#", "##....##", "##....##", "#.####.#", "#.#..#.#", "########"],
   },
   {
     no: "03",
     company: "Meesho DICE",
+    logo: "/logos/meesho.png",
     role: "National Semifinalist",
     tag: "Competition",
     metric: "₹14.57 Cr",
@@ -64,6 +67,7 @@ export const NAV = [
 export const EXPERIENCES = [
   {
     company: "Limechat",
+    logo: "/logos/limechat.png",
     role: "Product Management Intern",
     period: "May 2026 – Jul 2026",
     location: "Bengaluru, India",
@@ -78,6 +82,7 @@ export const EXPERIENCES = [
   },
   {
     company: "Gen AI Labs",
+    logo: "/logos/agentic.png",
     role: "Product Management Intern",
     period: "May 2025 – Jul 2025",
     location: "USA (Remote)",
@@ -95,6 +100,7 @@ export const EXPERIENCES = [
 export const CASE_STUDIES = [
   {
     no: "01",
+    logo: "/logos/meesho.png",
     tag: "Creator Commerce · National Semifinalist",
     title: "Meesho DICE",
     subtitle: "Scaling Beauty & Personal Care in Content Commerce",

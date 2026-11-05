@@ -92,7 +92,14 @@ const StaticChapter = () => {
               className="rounded-2xl border border-[#D5CFBF] bg-[#FAF8F5] p-5 shadow-sm text-[#1C1917]"
             >
               <div className="flex items-center justify-between text-xs font-mono text-[#78716C]">
-                <span className="font-bold text-[#1C1917]">{beat.company}</span>
+                <div className="flex items-center gap-2">
+                  {beat.logo && (
+                    <div className="flex h-6 w-6 items-center justify-center rounded-md border border-[#D5CFBF] bg-white p-0.5 shadow-sm">
+                      <img src={beat.logo} alt="" className="h-full w-full object-contain" />
+                    </div>
+                  )}
+                  <span className="font-bold text-[#1C1917]">{beat.company}</span>
+                </div>
                 <span className="rounded-full bg-[#1C1917] px-2 py-0.5 text-[10px] font-bold text-[#86efac]">
                   {beat.tag}
                 </span>

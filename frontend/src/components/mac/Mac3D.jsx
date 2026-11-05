@@ -53,13 +53,14 @@ export const Mac3D = ({ rotateY = -24, rotateX = -9, hl = 40, product = PRODUCTS
   const idle = gameReady && !playing;
   const text = phase === "hello" ? "HELLO" : idle ? "PRESS SHP TO PLAY" : msg || product?.screenName || product?.company || product?.name || "";
   const pixel = phase === "hello" || idle || msg ? null : product?.pixel;
+  const logo = phase === "hello" || idle || msg ? null : product?.logo;
 
   return (
     <div className="relative" style={{ width: W + 40, height: H + 110, perspective: 1700 }} data-testid={testId}>
       <motion.div className="absolute left-1/2 top-[42%]" style={{ rotateY, rotateX, "--hl": hl, transformStyle: "preserve-3d" }}>
         <div className="mac-face" style={f(W, H, `translateZ(${D / 2}px)`)}>
           <div className="mac-bezel absolute left-[24px] right-[24px] top-[22px] h-[196px] rounded-[18px] p-[12px]">
-            <MacScreen text={text} pixel={pixel} on={on} booting={power && phase === "boot"} bright={bright}
+            <MacScreen text={text} pixel={pixel} logo={logo} on={on} booting={power && phase === "boot"} bright={bright}
               game={gameReady && playing && phase === "ready"} onTap={gameReady ? () => press(null) : undefined} />
           </div>
           <MacControls bright={bright} onDial={() => setBright((b) => (b + 1) % 3)} power={power} onPower={() => setPower((v) => !v)} />
