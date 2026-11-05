@@ -1,6 +1,6 @@
 import { createContext, createElement, useCallback, useContext, useEffect, useRef, useState } from "react";
 
-const KEY = "pm-sound";
+const KEY = "pm-sound-v2";
 const PRESETS = {
   key: { freq: 160, dur: 0.07, noise: 0.25, gain: 0.35 },
   click: { freq: 1800, dur: 0.025, noise: 0.18, gain: 0.18 },
