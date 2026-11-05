@@ -129,9 +129,9 @@ export const CASE_STUDIES = [
   },
   {
     no: "02",
-    tag: "InterIIT Tech Meet 14.0 · National Gold Medal",
-    title: "Adobe Photoshop 2030",
-    subtitle: "Generative Mobile Creative Engine",
+    tag: "Inter-IIT Tech 14.0 · National Gold Medal",
+    title: "Adobe Photoshop",
+    subtitle: "Photoshop 2030 · Mobile Creative Engine",
     role: "Product Development Lead / Product Strategist",
     result: "$725M",
     resultLabel: "Addressable mobile AI TAM (National 1st Place across 23 IITs)",
