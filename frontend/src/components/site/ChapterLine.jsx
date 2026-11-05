@@ -11,7 +11,7 @@ export const ChapterLine = ({ p, i, beat, mobile, onOpenExperience }) => {
   const [s, e] = CARD_WINDOWS[i];
   const mid = (s + e) / 2;
   const isLeft = i % 2 === 0;
-  const d = mobile ? "12vh" : "24vh";
+  const d = mobile ? "6vh" : "24vh";
 
   // Continuous flowing scroll without artificial pause
   const y = useTransform(p, [s, mid, e], [d, "0vh", `-${d}`]);
@@ -21,7 +21,7 @@ export const ChapterLine = ({ p, i, beat, mobile, onOpenExperience }) => {
   const pointerEvents = useTransform(opacity, (v) => (v > 0.4 ? "auto" : "none"));
 
   const pos = mobile
-    ? "top-16 inset-x-4 text-left"
+    ? "bottom-12 inset-x-3 text-left"
     : isLeft
     ? "left-[5vw] top-1/2 -translate-y-1/2 text-left max-w-[36vw]"
     : "right-[5vw] top-1/2 -translate-y-1/2 text-left max-w-[36vw]";

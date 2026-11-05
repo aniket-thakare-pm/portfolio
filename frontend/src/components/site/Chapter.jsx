@@ -10,7 +10,7 @@ import { useIsMobile } from "@/lib/useIsMobile";
 import { playSound } from "@/lib/sound";
 
 const MacScale = ({ children }) => (
-  <div className="scale-[0.62] sm:scale-90 lg:scale-[1.05] xl:scale-[1.15]">{children}</div>
+  <div className="scale-[0.52] sm:scale-75 md:scale-90 lg:scale-[1.05] xl:scale-[1.15]">{children}</div>
 );
 
 const HERO_PRODUCT = {
@@ -166,7 +166,7 @@ const PinnedChapter = () => {
   const y = useTransform(
     p,
     [0, 0.10, 0.88, 1.0],
-    mobile ? ["24vh", "0vh", "0vh", "0vh"] : ["3vh", "0vh", "0vh", "0vh"]
+    mobile ? ["28vh", "-12vh", "-12vh", "-12vh"] : ["3vh", "0vh", "0vh", "0vh"]
   );
   const scale = useTransform(p, [0.88, 1.0], [1, 0.94]);
 

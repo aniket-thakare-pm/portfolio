@@ -17,7 +17,7 @@ export const RetroGamepad = ({ onAction, activeKeys = {} }) => {
       </div>
 
       {/* Main Gamepad Chassis */}
-      <div className="relative z-10 flex w-full max-w-md items-center justify-between rounded-[28px] border-4 border-[#292524] bg-[#E7E2D5] px-6 py-5 shadow-[0_15px_30px_rgba(0,0,0,0.5),inset_0_2px_0_rgba(255,255,255,0.4)] text-[#1C1917] select-none">
+      <div className="relative z-10 flex w-full max-w-md items-center justify-between rounded-[22px] sm:rounded-[28px] border-3 sm:border-4 border-[#292524] bg-[#E7E2D5] px-3 sm:px-6 py-3.5 sm:py-5 shadow-[0_15px_30px_rgba(0,0,0,0.5),inset_0_2px_0_rgba(255,255,255,0.4)] text-[#1C1917] select-none scale-[0.86] sm:scale-100 origin-top">
         {/* Left Side: D-PAD */}
         <div className="relative flex flex-col items-center">
           <div className="relative h-28 w-28 flex items-center justify-center">

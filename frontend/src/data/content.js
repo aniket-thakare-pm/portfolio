@@ -304,34 +304,36 @@ export const ROLE_LINES = [
 
 export const LEADERSHIP = [
   {
-    no: "01",
     role: "Contingent Design Captain",
     org: "InterIIT Tech Meet 14.0",
-    badge: "Captain",
-    tenure: "2025",
   },
   {
-    no: "02",
     role: "Executive Head",
     org: "Product Club, IIT Kharagpur",
-    badge: "Executive Head",
-    tenure: "2025 – 2026",
   },
   {
-    no: "03",
     role: "Media & Public Relations Head",
     org: "TeamKART (Formula Student Vehicle Project)",
-    badge: "Head of Media & PR",
-    tenure: "2024 – 2025",
   },
 ];
 
 export const JOURNEY = [
-  { no: "#01", obj: "edit", title: "Video editing", line: "Taught me pacing, rhythm, and the ruthless discipline of cutting anything that doesn't serve the core story." },
-  { no: "#02", obj: "film", title: "Filmmaking", line: "Directing cast and crew at TFPS (Technology Filmmaking and Photography Society) taught me cross-functional alignment and steering people toward a unified vision." },
-  { no: "#03", obj: "photo", title: "Photography", line: "Trained my eye at TFPS for framing, composition, and learning how to isolate the essential signal from surrounding noise." },
-  { no: "#04", obj: "ps", title: "Graphic design", line: "Taught me typography, visual weight, and spatial hierarchy — and that perceived quality directly dictates user trust." },
-  { no: "#05", obj: "ui", title: "UI / UX", line: "Moving from static aesthetics to dynamic interaction — designing intuitive flows that minimize cognitive friction." },
-  { no: "#06", obj: "pm", title: "Product management", line: "The strategic anchor: identifying the right problem, talking to real users, weighing hard trade-offs, and prioritizing outcomes." },
-  { no: "#07", obj: "build", title: "Product building", line: "Closing the loop: using code and modern AI to take a concept from a PRD all the way to a live, working product in the real world." },
+  {
+    no: "#01",
+    obj: "film",
+    title: "Visual Storytelling",
+    line: "Directing short films and editing timelines at TFPS taught me cross-functional alignment and the ruthless discipline of cutting anything that doesn't advance the core narrative.",
+  },
+  {
+    no: "#02",
+    obj: "ui",
+    title: "Design Systems & UI",
+    line: "From spatial composition and typography to dynamic interaction: designing intuitive flows that eliminate cognitive friction and establish user trust.",
+  },
+  {
+    no: "#03",
+    obj: "build",
+    title: "Product Strategy & 0-to-1",
+    line: "Closing the loop: combining user discovery, econometric logit modeling, and modern AI engineering to take concepts from specs to live production code.",
+  },
 ];

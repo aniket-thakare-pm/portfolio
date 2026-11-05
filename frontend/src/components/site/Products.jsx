@@ -96,10 +96,10 @@ export const Products = () => {
   const bottomTier = PRODUCTS.slice(2);
 
   return (
-    <section id="built" className="bg-[#EAE5D9] px-5 py-20 sm:px-8 lg:py-28" data-testid="products-section">
+    <section id="built" className="bg-[#EAE5D9] px-4 py-14 sm:px-8 lg:py-24" data-testid="products-section">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12">
-          <h2 className="font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="font-display text-3xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
             Things I Built
           </h2>
           <p className="mt-3 max-w-2xl text-base text-[#57534E] sm:text-lg">
@@ -111,7 +111,7 @@ export const Products = () => {
         <div className="mb-6 grid gap-6 md:grid-cols-2">
           {topTier.map((p, i) => (
             <Reveal key={p.no} delay={i * 0.08}>
-              <Card p={p} bannerHeight="h-56" onOpen={() => setOpen(p)} />
+              <Card p={p} bannerHeight="h-40 sm:h-56" onOpen={() => setOpen(p)} />
             </Reveal>
           ))}
         </div>
@@ -120,7 +120,7 @@ export const Products = () => {
         <div className="grid gap-6 md:grid-cols-3">
           {bottomTier.map((p, i) => (
             <Reveal key={p.no} delay={0.16 + i * 0.08}>
-              <Card p={p} bannerHeight="h-44" onOpen={() => setOpen(p)} />
+              <Card p={p} bannerHeight="h-32 sm:h-44" onOpen={() => setOpen(p)} />
             </Reveal>
           ))}
         </div>

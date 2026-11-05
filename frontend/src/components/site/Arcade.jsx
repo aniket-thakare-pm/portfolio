@@ -83,7 +83,7 @@ export const Arcade = () => {
   return (
     <section
       id="arcade"
-      className="border-t border-[#262320] bg-[#0E0D0C] px-5 py-20 text-[#F4F1EA] sm:px-8 lg:py-28"
+      className="border-t border-[#262320] bg-[#0E0D0C] px-4 py-14 text-[#F4F1EA] sm:px-8 lg:py-24"
       data-testid="arcade-section"
     >
       <div className="mx-auto max-w-5xl">
@@ -93,17 +93,17 @@ export const Arcade = () => {
             <Gamepad2 size={14} /> Bonus Level · Retro Arcade Station
           </div>
 
-          <h2 className="mt-4 font-display text-4xl font-black tracking-tight text-white sm:text-6xl">
+          <h2 className="mt-4 font-display text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
             Insert <span className="italic text-[#FF5A00]" style={{ fontFamily: "Fraunces" }}>Floppy Disk</span> & Play
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-[#A8A29E] sm:text-base leading-relaxed">
+          <p className="mx-auto mt-2 max-w-xl text-xs sm:text-base leading-relaxed text-[#A8A29E]">
             Click any 3.5" floppy disk below to load the ROM into the vintage CRT monitor.
             Play with the wired on-screen controller or your physical keyboard.
           </p>
         </div>
 
         {/* 1. FLOPPY DISKS RACK / SELECTOR */}
-        <div className="mt-12 flex flex-wrap items-end justify-center gap-6 sm:gap-8">
+        <div className="mt-8 sm:mt-12 flex items-end justify-center gap-3 sm:gap-8">
           {FLOPPY_DISKS.map((disk) => (
             <RetroFloppy
               key={disk.id}

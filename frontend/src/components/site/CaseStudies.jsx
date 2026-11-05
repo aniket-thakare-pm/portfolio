@@ -7,11 +7,11 @@ import { CaseStudyPanel } from "./CaseStudyPanel";
 export const CaseStudies = () => {
   const [open, setOpen] = useState(-1);
   return (
-    <section id="cases" className="px-5 py-20 sm:px-8 lg:py-28" data-testid="cases-section">
+    <section id="cases" className="px-4 py-14 sm:px-8 lg:py-24" data-testid="cases-section">
       <div className="mx-auto max-w-7xl">
         {/* Single clean heading + description */}
-        <div className="mb-12">
-          <h2 className="font-display text-4xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
+        <div className="mb-8 sm:mb-12">
+          <h2 className="font-display text-3xl font-black tracking-tight text-[#1C1917] sm:text-5xl lg:text-6xl">
             Case Studies & Competitions
           </h2>
           <p className="mt-3 max-w-2xl text-base text-[#57534E] sm:text-lg">
@@ -27,7 +27,7 @@ export const CaseStudies = () => {
                 onClick={() => setOpen(i)}
                 data-sound="open"
                 data-testid={`case-card-${c.no}`}
-                className="chassis-dark group flex h-full min-h-[450px] w-full flex-col justify-between rounded-2xl p-6 text-left text-[#F4F1EA] transition-transform duration-300 hover:-translate-y-1"
+                className="chassis-dark group flex h-full min-h-0 sm:min-h-[440px] w-full flex-col justify-between rounded-2xl p-4 sm:p-6 text-left text-[#F4F1EA] transition-transform duration-300 hover:-translate-y-1"
               >
                 <div>
                   {/* Top Bar with Number & Arrow */}

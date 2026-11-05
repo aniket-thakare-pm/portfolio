@@ -62,7 +62,7 @@ export const Journey = () => {
   const [idx, setIdx] = useState(0);
   useMotionValueEvent(p, "change", (v) => setIdx(Math.min(N - 1, Math.max(0, Math.floor(v * N)))));
   return (
-    <div ref={ref} className="relative h-[700vh]" data-testid="journey">
+    <div ref={ref} className="relative h-[300vh]" data-testid="journey">
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className={`story-spot absolute inset-0 ${mobile ? "" : "story-spot-right"}`} />
         <div className={`absolute inset-0 flex items-center justify-center ${mobile ? "" : "pl-[34vw]"}`}>
