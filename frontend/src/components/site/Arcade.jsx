@@ -119,13 +119,13 @@ export const Arcade = () => {
   return (
     <section
       id="arcade"
-      className="relative w-full border-t border-[#262320] bg-[#0E0D0C] text-[#F4F1EA] pb-16"
+      className="relative w-full border-t border-[#262320] bg-[#0E0D0C] text-[#F4F1EA]"
       data-testid="arcade-section"
     >
       <div ref={triggerRef} />
 
       {/* 1. THE TRIGGER DRAWER BAR (When Closed or Open) */}
-      <div className="w-full bg-[#121110] border-b border-[#262320]">
+      <div className={`w-full bg-[#121110] ${open ? "border-b border-[#262320]" : ""}`}>
         <button
           onClick={toggle}
           data-sound="open"
@@ -168,7 +168,7 @@ export const Arcade = () => {
 
       {/* 2. THE UNFURLED RETRO ARCADE CHAMBER */}
       {open && (
-        <div className="w-full px-4 py-14 sm:px-8 lg:py-20" data-testid="arcade-chamber">
+        <div className="w-full px-4 pt-14 pb-0 sm:px-8 sm:pt-16 sm:pb-0 lg:pt-20 lg:pb-0" data-testid="arcade-chamber">
           <div className="mx-auto max-w-5xl">
             {/* Section Eyebrow & Headline */}
             <div className="text-center">
@@ -288,7 +288,7 @@ export const Arcade = () => {
           </div>
 
           {/* EJECT / CLOSE BOTTOM BAR */}
-          <div className="mt-14 w-full border-t border-[#262320] bg-[#141210] -mb-14 -mx-4 sm:-mx-8 lg:-mx-20 px-6 py-4 sm:px-12 sm:py-5">
+          <div className="mt-14 w-full border-t border-[#262320] bg-[#141210] -mx-4 sm:-mx-8 px-6 py-4 sm:px-12 sm:py-5">
             <button
               onClick={close}
               data-sound="switch"
