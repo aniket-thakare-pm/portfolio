@@ -320,20 +320,38 @@ export const LEADERSHIP = [
 export const JOURNEY = [
   {
     no: "#01",
-    obj: "film",
-    title: "Visual Storytelling",
-    line: "Directing short films and editing timelines at TFPS taught me cross-functional alignment and the ruthless discipline of cutting anything that doesn't advance the core narrative.",
+    obj: "edit",
+    title: "Video editing",
+    line: "Sitting behind timeline playheads drilled in the ruthless discipline of pacing: cutting anything that doesn't advance the core narrative.",
   },
   {
     no: "#02",
-    obj: "ui",
-    title: "Design Systems & UI",
-    line: "From spatial composition and typography to dynamic interaction: designing intuitive flows that eliminate cognitive friction and establish user trust.",
+    obj: "film",
+    title: "Filmmaking",
+    line: "Directing short films at TFPS (Technology Filmmaking and Photography Society) was cross-functional alignment under fire: holding the vision while trusting the crew to execute.",
   },
   {
     no: "#03",
+    obj: "photo",
+    title: "Photography",
+    line: "A lens forces aggressive choices. Photography trained my eye for framing, composition, and isolating the essential signal from surrounding noise.",
+  },
+  {
+    no: "#04",
+    obj: "ps",
+    title: "Graphic design",
+    line: "Moving from the lens to the canvas: typography, visual weight, and layout hierarchy — learning that perceived polish directly dictates user trust.",
+  },
+  {
+    no: "#05",
+    obj: "ui",
+    title: "UI / UX systems",
+    line: "Moving from static aesthetics to dynamic interaction — designing intuitive flows that eliminate cognitive friction and match user mental models.",
+  },
+  {
+    no: "#06",
     obj: "build",
-    title: "Product Strategy & 0-to-1",
-    line: "Closing the loop: combining user discovery, econometric logit modeling, and modern AI engineering to take concepts from specs to live production code.",
+    title: "Product & 0-to-1 shipping",
+    line: "Closing the loop: combining deep user discovery, quantitative specs, and modern code to take ideas from PRDs all the way to live production.",
   },
 ];
