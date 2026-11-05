@@ -21,27 +21,33 @@ export const ExperienceDialog = ({ experience, side = "right", onClose }) => {
       }
     };
 
-    // 3. Flick-to-dismiss on scroll wheel
+    // 3. Flick-to-dismiss on scroll wheel (ONLY when scrolling OUTSIDE the dialog box)
     let accumulatedDelta = 0;
     const onWheel = (e) => {
+      // If mouse is inside the dossier content, allow natural local scrolling without dismissal
+      if (e.target.closest?.("[data-dialog-content]")) {
+        return;
+      }
       accumulatedDelta += Math.abs(e.deltaY);
-      if (accumulatedDelta > 18) {
+      if (accumulatedDelta > 24) {
         playSound("tick");
         onClose();
       }
     };
 
-    // 4. Touch swipe to dismiss on mobile
+    // 4. Touch swipe to dismiss on mobile (ONLY when swiping outside on the backdrop)
     let touchStartY = null;
+    let touchInside = false;
     const onTouchStart = (e) => {
       if (e.touches && e.touches[0]) {
+        touchInside = !!e.target.closest?.("[data-dialog-content]");
         touchStartY = e.touches[0].clientY;
       }
     };
     const onTouchMove = (e) => {
-      if (touchStartY !== null && e.touches && e.touches[0]) {
+      if (!touchInside && touchStartY !== null && e.touches && e.touches[0]) {
         const delta = Math.abs(e.touches[0].clientY - touchStartY);
-        if (delta > 28) {
+        if (delta > 32) {
           playSound("tick");
           onClose();
         }
@@ -96,7 +102,9 @@ export const ExperienceDialog = ({ experience, side = "right", onClose }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 12 }}
             transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-auto relative max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-2xl border-2 border-[#D5CFBF] bg-[#FAF8F5] p-5 shadow-[0_25px_60px_rgba(0,0,0,0.4)] sm:p-6"
+            data-dialog-content
+            onWheel={(e) => e.stopPropagation()}
+            className="pointer-events-auto relative max-h-[82vh] w-full max-w-xl overflow-y-auto overscroll-contain rounded-2xl border-2 border-[#D5CFBF] bg-[#FAF8F5] p-5 shadow-[0_25px_60px_rgba(0,0,0,0.4)] sm:p-6"
           >
             {/* Top Status & Close Row */}
             <div className="flex items-center justify-between border-b border-[#D5CFBF]/80 pb-2.5">

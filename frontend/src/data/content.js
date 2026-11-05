@@ -58,8 +58,6 @@ export const NAV = [
   { id: "experience", label: "Experience" },
   { id: "cases", label: "Case Studies" },
   { id: "built", label: "Things I Built" },
-  { id: "leadership", label: "Leadership" },
-  { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ];
 

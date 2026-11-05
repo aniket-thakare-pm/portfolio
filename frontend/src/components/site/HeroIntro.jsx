@@ -41,12 +41,12 @@ export const HeroIntro = () => (
     {/* Compact, refined action links fitted closely beneath subtitle */}
     <div className="mt-4 flex flex-wrap items-center gap-2.5 sm:mt-5 sm:gap-3">
       <a
-        href="#cases"
+        href="#contact"
         data-sound="tick"
-        data-testid="hero-see-proof-btn"
+        data-testid="hero-contact-btn"
         className="key key-orange inline-flex items-center gap-1.5 rounded-xl px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[#1C1917] transition-all"
       >
-        View Work <ArrowDownRight size={14} />
+        Contact Me <ArrowDownRight size={14} />
       </a>
       <a
         href={OWNER.linkedin}
